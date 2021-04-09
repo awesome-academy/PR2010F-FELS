@@ -16,20 +16,20 @@
                                         <p>Get going with Git. This exam covers every basic command you need to do the vast majority of the things you’ll eventually spend your time doing with Git. By the end of the exam, you should be able to configure and initialize a repository, begin and stop tracking files, and stage and commit changes. We’ll also show you how to set up Git to ignore certain files and file patterns, how to undo mistakes quickly and easily, how to browse the history of your project and view changes between commits, and how to push and pull from remote repositories.</p>
                                     </div>
                                 </div>
-                                
+
                                 <div class="requirement mt-2"><span class="mr-1">Requirement:</span>25/30 questions</div>
                             </div>
                             <div class="content-right flex-1 w-full flex vs:justify-center ls:justify-end vs:mt-2 ls:mt-0">
                                 <div class="flex relative flex-col justify-center">
                                     <div class="ant-progress ant-progress-circle ant-progress-status-normal ant-progress-default">
                                         <div class="ant-progress-inner ant-progress-circle-gradient" style="width: 250px; height: 250px; font-size: 43.5px;">
-                                            
+
                                         </div>
                                     </div>
                                     <div class="absolute percent-inline w-full text-center">
                                         <div class="flex flex-row justify-center text-center">
                                             <div class="vs:absolute banner-margin ls:mt-12 ls:relative ls:mt-0 text-center">
-                                                <div class="total-test">26<span class="mx-1">/</span>30</div>
+                                            	<div class="col-md-6 text-danger">YOUR RESULT <br> <%= @pass_or_fail %></div>
                                                 <div class="result-test result-passed mt-2">Passed!</div>
                                             </div>
                                         </div>
@@ -79,12 +79,12 @@
 									</li>
 
 									<% end %>
-                                    
+
                                 </ul>
                             </div>
                         </div>
                         <div class="test-view__right">
-							
+
 							<div class="tab-contents">
                             <% @questions.each_with_index do |q, index| %>
 							<div class="tab-content" id="question-<%= q.id %>">
@@ -112,16 +112,14 @@
                                     <div class="title-note">This is your answer here:</div>
                                     <div class="ant-radio-group ant-radio-group-outline">
 										<% @questions.find(q.id).answers.each_with_index do |answer,i| %>
-                            			
+
 										<div class="d-flex align-item-center form-check pt-2">
 											<%= check_box_tag "answer", answer.id, @exam.results[index].answer_id.present?, class: "answer-checkboxes", id: "answer#{answer.id}" %>
 											<div class="md-contents <%= @exam.results[index].answer_is_correct.present? && answer.is_correct ? 'bg-item-corrected': @exam.results[index].answer_id == answer.id ? 'bg-item-incorrected' : '' %>">
-												<label class="form-check-label" for="answer<%=answer.id%>">
-													<%= answer.answer_content %>
 												</label>
 											</div>
 										</div>
-									
+
 
 										<% end %>
 
