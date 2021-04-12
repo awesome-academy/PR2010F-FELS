@@ -1,42 +1,120 @@
+<main class="v-layout-content flex-shrink-0 ant-layout-content">
+    <div class="ant-row">
+        <div class="mx-auto col-sm-12 col-md-10 col-lg-8 col-xl-6 my-8">
+            <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+            <%= render "devise/shared/error_messages", resource: resource %>
+            <div class="el-card is-always-shadow">
+                <!---->
+                <div class="el-card__body">
+                    <h1 class="card-title">
+                        Register account for
+                    </h1>
+                    <p class="card-subtitle mt-2">
+                        Welcome to <strong>Viblo platform</strong>!
+                        Join us to find useful information required to improve your skills.
+                        Please fill your info into the form below to continue.
+                    </p>
+                    <div class="pt-4">
+                        <form class="el-form">
+                            <!---->
+                            <div class="el-form-item is-required">
+                                <!---->
+                                <div class="el-form-item__content">
+                                    <div class="el-input">
+                                        <!----><input type="text" autocomplete="off" placeholder="Your name" class="el-input__inner">
+                                        <!---->
+                                        <!---->
+                                        <!---->
+                                        <!---->
+                                    </div>
+                                    <!---->
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="el-form-item is-required">
+                                        <!---->
+                                        <div class="el-form-item__content">
+                                            <div class="el-input">
+                                                <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "el-input__inner", placeholder: "Your email address" %>
+                                            </div>
+                                            <!---->
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="el-form-item is-required">
+                                        <!---->
+                                        <div class="el-form-item__content">
+                                            <div class="el-input">
+                                                <!----><input type="text" autocomplete="off" placeholder="Username" class="el-input__inner">
+                                                <!---->
+                                                <!---->
+                                                <!---->
+                                                <!---->
+                                            </div>
+                                            <!---->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <% if @minimum_password_length %>
+                            <em>(<%= @minimum_password_length %> characters minimum)</em>
+                            <% end %>
+                            <div class="el-form-item is-required">
+                                <!---->
+                                <div class="el-form-item__content">
+                                    <div class="el-input">
+                                        <%= f.password_field :password, autocomplete: "new-password", class: "el-input__inner", placeholder: "Password" %>
+                                    </div>
+                                    <!---->
+                                </div>
+                            </div>
+                            <div class="el-form-item is-required">
+                                <!---->
+                                <div class="el-form-item__content">
+                                    <div class="el-input">
+                                        <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "el-input__inner", placeholder: "Confirm your password" %>
+                                    </div>
+                                    <!---->
+                                </div>
+                            </div>
+                        </form>
+                        <div class="text-center">
+                            <%= f.submit "Sign up", class: "el-button w-100 my-2 el-button--primary" %>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between my-3">
+                        </div>
+                        <hr class="flex-fill m-0">
+                        <span class="mx-3">
+                            Or login with
+                        </span>
+                        <hr class="flex-fill m-0">
+                        <div class="social-login my-3">
+                            <ul class="list-unstyled d-flex align-items-center justify-content-between flex-wrap mb-0">
+                                <button type="button" class="el-button social-login__button facebook el-button--default el-button--medium">
+                                    <!----><i class="fab fa-facebook-f mr-1"></i><span>
+                                        Facebook
+                                    </span>
+                                </button>
+                                <button type="button" class="el-button social-login__button google el-button--default el-button--medium">
+                                    <!----><i class="fab fa-google mr-1"></i><span>
+                                        Google
+                                    </span>
+                                </button>
+                                <button type="button" class="el-button social-login__button github el-button--default el-button--medium">
+                                    <!----><i class="fab fa-github mr-1"></i><span>
+                                        Github
+                                    </span>
+                                </button>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+            <% end %>
 
-
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-<%= render "devise/shared/error_messages", resource: resource %>
-<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
-
-<div class="container" id="wrap">
-  <div class="row">
-    <div class="col-md-6 col-md-offset-3">
-      <form action="r" method="post" accept-charset="utf-8" class="form" role="form">   <legend>Sign Up</legend>
-        <h4>It's free and always will be.</h4>
-            <!-- <input type="text" name="email" value="" class="form-control input-lg" placeholder="Your Email"  /> -->
-            <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control input-lg", placeholder: "Your email" %>
-            <!-- <input type="password" name="password" value="" class="form-control input-lg" placeholder="Password"  /> -->
-            <% if @minimum_password_length %>
-            <em>(<%= @minimum_password_length %> characters minimum)</em>
-            <% end %><br />
-            <%= f.password_field :password, autocomplete: "new-password", class: "form-control input-lg" %>
-            <!-- <input type="password" name="confirm_password" value="" class="form-control input-lg" placeholder="Confirm Password"  /> -->
-            <%= f.label :password_confirmation %><br />
-            <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control input-lg" %>
-            <br />
-            
-            <!-- <button class="btn btn-lg btn-primary btn-block signup-btn" type="submit">Create my account</button> -->
-            <%= f.submit "Sign up", class: "btn btn-lg btn-primary btn-block signup-btn" %>
-          </form>          
         </div>
-      </div>            
     </div>
-  </div>
-  <% end %>
+    </div>

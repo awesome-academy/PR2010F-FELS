@@ -1,78 +1,118 @@
 <%= provide(:title, "Exam Result")%>
-<div class="row jumbotron">
-	<div class="create-test container my-4">
-		<div class="create-test__content-flex">
-			<div id="questionTabs">
-				<div class="d-flex test-view">
-					<div class="test-view__left">
-						<div class="flex">
-							<div class="list-heading">
-								Question List
-							</div>
-						</div>
-						<hr>
-						<div class="d-flex flex-column">
-							<div class="d-flex flex-column label-question justify-content-center border-bottom">
-								<div class="d-flex flex-row justify-content-between">
-									<div class="d-flex align-items-center">
-										<div class="border-question border-corrected"></div>
-										<div class="pl-2 text">
-											Corrected answer
-										</div>
-									</div>
-									<div class="d-flex align-items-center">
-										<div class="border-question border-incorrected"></div>
-										<div class="pl-2 text">
-											Incorrected
-										</div>
-									</div>
-								</div>
-								<div class="note d-flex align-items-center"><span role="img" aria-label="exclamation-circle" class="anticon anticon-exclamation-circle"><svg viewBox="64 64 896 896" focusable="false" class="" data-icon="exclamation-circle" width="1em" height="1em" fill="currentColor" aria-hidden="true">
-									<path d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"></path>
-									<path d="M464 688a48 48 0 1096 0 48 48 0 10-96 0zm24-112h48c4.4 0 8-3.6 8-8V296c0-4.4-3.6-8-8-8h-48c-4.4 0-8 3.6-8 8v272c0 4.4 3.6 8 8 8z"></path>
-								</svg></span>
-								<span class="ml-2">Click on the question for detail</span>
-							</div>
-							<div>
-								Ket qua cua ban: <%= @result %>
-							</div>
-						</div>
-						<ul class="d-flex flex-wrap question-list tabs">
-							<% @questions.each_with_index do |q, index| %>
-							<li class="list-item tab-link" data-tab="question-<%= q.id %>">
-								<a href="#question-<%= q.id %>" data-toggle="tab">
-									<div class="question-item d-flex align-items-center justify-content-center question-<%= q.id %> <%= @exam.results[index].answer_is_correct &&  @exam.results[index].present? ? 'bg-item-corrected' : 'bg-item-incorrected'%>"><%= index + 1 %></div>
-								</a>
-							</li>
-							<% end %>
-						</ul>
-					</div>
-				</div>
-				<div class="test-view__right" id="test-view">
-					<div class="tab-contents">
-						<% @questions.each_with_index do |q, index| %>
-						<div class="tab-content" id="question-<%= q.id %>">
-							<div class="test-view__exam-detail">
-								<div class="d-flex flex-column justify-content-between align-item-center">
-									<div class="question-heading">
-										Question <%= index + 1 %>
-									</div>
-									<div class="my-4">
-										<div class="md-contents">
-											<p><%= q.question_name %></p>
-										</div>
-									</div>
-								</div>
-								<hr>
-							</div>
-							<div class="mt-2">
-								<div class="d-flex flex-column show-question-answers v-answers">
-									<div class="title-note">
-										This is your answer here:
+<main class="v-layout-content flex-shrink-0 ant-layout-content">
+    <div class="ant-row">
+        <div class="ant-col v-layout-container ant-col-xs-24 ant-col-lg-24">
+            <div class="">
+                <section class="detail-banner relative " style="background: url(&quot;/assets/banner-course-detail.png&quot;);">
+                    <div class="detail-banner__main detail-banner__breadcrumb">
+                        <div class="py-3 ant-breadcrumb"><span><span class="ant-breadcrumb-link"><%= link_to "Home", root_path %></span><span class="ant-breadcrumb-separator">&gt;</span></span><span><span class="ant-breadcrumb-link"><%= link_to "Course", courses_path %></span><span class="ant-breadcrumb-separator">&gt;</span></span><span><span class="ant-breadcrumb-link"><%= link_to @course.course_name, @course %></span><span class="ant-breadcrumb-separator">&gt;</span></span></div>
+                    </div>
+                    <div class="create-test v-layout-center relative">
+                        <div class="create-test__banner-content mt-10 flex vs:flex-col ls:flex-row">
+                            <div class="content-left flex-2">
+                                <div class="title"><%= @course.course_name %></div>
+                                <div class="course-markdown__desc">
+                                    <div class="md-contents">
+                                        <p>Get going with Git. This exam covers every basic command you need to do the vast majority of the things you’ll eventually spend your time doing with Git. By the end of the exam, you should be able to configure and initialize a repository, begin and stop tracking files, and stage and commit changes. We’ll also show you how to set up Git to ignore certain files and file patterns, how to undo mistakes quickly and easily, how to browse the history of your project and view changes between commits, and how to push and pull from remote repositories.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="requirement mt-2"><span class="mr-1">Requirement:</span>25/30 questions</div>
+                            </div>
+                            <div class="content-right flex-1 w-full flex vs:justify-center ls:justify-end vs:mt-2 ls:mt-0">
+                                <div class="flex relative flex-col justify-center">
+                                    <div class="ant-progress ant-progress-circle ant-progress-status-normal ant-progress-default">
+                                        <div class="ant-progress-inner ant-progress-circle-gradient" style="width: 250px; height: 250px; font-size: 43.5px;">
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="absolute percent-inline w-full text-center">
+                                        <div class="flex flex-row justify-center text-center">
+                                            <div class="vs:absolute banner-margin ls:mt-12 ls:relative ls:mt-0 text-center">
+                                                <div class="total-test">26<span class="mx-1">/</span>30</div>
+                                                <div class="result-test result-passed mt-2">Passed!</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="create-test v-layout-center my-8">
+                <div class="create-test__content flex">
+                    <div class="flex test-view w-full">
+                        <div class="test-view__left">
+                            <div class="list-heading">Question List</div>
+                            <hr>
+                            <div class="h-full flex flex-col">
+                                <div class="flex flex-col label-question justify-center">
+                                    <div class="flex vs:flex-col ls:flex-row">
+                                        <div class="flex items-center">
+                                            <div class="border-question border-corrected"></div>
+                                            <div class="text ml-3">Corrected answer</div>
+                                        </div>
+                                        <div class="flex items-center vs:ml-0 ls:ml-8">
+                                            <div class="border-question border-incorrected"></div>
+                                            <div class="text ml-3">Incorrected</div>
+                                        </div>
+                                    </div>
+                                    <div class="note flex items-center">
+                                        <span role="img" aria-label="exclamation-circle" class="anticon anticon-exclamation-circle">
+                                            <svg viewBox="64 64 896 896" focusable="false" class="" data-icon="exclamation-circle" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                                                <path d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"></path>
+                                                <path d="M464 688a48 48 0 1096 0 48 48 0 10-96 0zm24-112h48c4.4 0 8-3.6 8-8V296c0-4.4-3.6-8-8-8h-48c-4.4 0-8 3.6-8 8v272c0 4.4 3.6 8 8 8z"></path>
+                                            </svg>
+                                        </span>
+                                        <p class="ml-2">Click on the question for detail</p>
+                                    </div>
+                                    <hr>
+                                </div>
+                                <ul class="flex flex-wrap question-list tabs">
 
-									</div>
-									<div class="input-group d-flex flex-column">
+									<% @questions.each_with_index do |q, index| %>
+									<li class="list-item tab-link" data-tab="question-<%= q.id %>">
+										<a href="#question-<%= q.id %>" data-toggle="tab">
+											<div class="question-item flex items-center justify-center relative question-<%= q.id %> <%= @exam.results[index].answer_is_correct &&  @exam.results[index].present? ? 'bg-item-corrected' : 'bg-item-incorrected'%>"><%= index + 1 %></div>
+										</a>
+									</li>
+
+									<% end %>
+                                    
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="test-view__right">
+							
+							<div class="tab-contents">
+                            <% @questions.each_with_index do |q, index| %>
+							<div class="tab-content" id="question-<%= q.id %>">
+
+                            <div class="relative test-view__exam-detail">
+                                <div class="absolute more-icon cursor-pointer">
+                                    <span role="img" aria-label="more" tabindex="-1" class="anticon anticon-more ant-dropdown-trigger" style="font-size: 24px;">
+                                        <svg viewBox="64 64 896 896" focusable="false" class="" data-icon="more" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                                            <path d="M456 231a56 56 0 10112 0 56 56 0 10-112 0zm0 280a56 56 0 10112 0 56 56 0 10-112 0zm0 280a56 56 0 10112 0 56 56 0 10-112 0z"></path>
+                                        </svg>
+                                    </span>
+                                </div>
+                                <div class="flex justify-between item-center">
+                                    <div class="question-heading vs:text-sm sm:text-2xl">Question <%= index + 1 %></div>
+                                </div>
+                                <div class="my-8">
+                                    <div class="md-contents">
+                                        <p><%= q.question_name %></p>
+                                    </div>
+                                </div>
+                                <hr class="my-6">
+                            </div>
+                            <div class="mt-4">
+                                <div class="flex flex-col question-answers show-question-answers v-answers">
+                                    <div class="title-note">This is your answer here:</div>
+                                    <div class="ant-radio-group ant-radio-group-outline">
 										<% @questions.find(q.id).answers.each_with_index do |answer,i| %>
+                            			
 										<div class="d-flex align-item-center form-check pt-2">
 											<%= check_box_tag "answer", answer.id, @exam.results[index].answer_id.present?, class: "answer-checkboxes", id: "answer#{answer.id}" %>
 											<div class="md-contents <%= @exam.results[index].answer_is_correct.present? && answer.is_correct ? 'bg-item-corrected': @exam.results[index].answer_id == answer.id ? 'bg-item-incorrected' : '' %>">
@@ -81,23 +121,34 @@
 												</label>
 											</div>
 										</div>
+									
 
 										<% end %>
-									</div>
-								</div>
+
+                                    </div>
+                                    <hr class="my-8">
+                                </div>
+                                <div class="flex vs:flex-col vs:items-center md:justify-between md:flex-row mt-2">
+                                    <div class="prev-question flex"><button type="button" class="capitalize v-button v-button-gray v-button-large previous-question" style="width: 200px;">
+                                            <div class="flex justify-center"><img class="mr-2" src="/assets/inactive_ic-left.svg" alt="">Back previous</div>
+                                        </button></div>
+                                    <div class="submit-question flex vs:mt-2 md:mt-0"><button type="button" class="capitalize v-button v-button-primary v-button-large next-question" style="width: 200px;">
+                                            <div class="flex justify-center">Next question<img class="ml-2" src="/assets/inactive_ic-left.svg" alt=""></div>
+                                        </button></div>
+                                </div>
+                            </div>
+
 							</div>
-							<div class="d-flex justify-content-between pt-2">
-								<a class="btn btn-warning btn-sm previous-question">&lt&lt Previous Question</a>
-								<a class="btn btn-warning btn-sm next-question">Next Question &gt&gt</a>
+
+							<% end %>
 							</div>
-						</div>
-						<% end %>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-</div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
 
 <%= javascript_pack_tag "exam" %>

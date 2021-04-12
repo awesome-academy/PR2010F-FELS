@@ -1,67 +1,55 @@
-.layout-homepage .layout-introduction{
-	background: url('/assets/bg-introduction-banner.png') no-repeat;
-    background-size: cover;
-    z-index: 1040;
-}
-.layout-introduction{
-	height: 900px;
-}
 
-
-.layout-homepage .layout-introduction-left .slogan {
-    font-family: 'Poppins Bold';
-    color: #FFFFFF;
-    font-weight: bold;
-    letter-spacing: 0;
-}
-
-.layout-introduction-left .slogan {
-    font-size: 60px;
-    line-height: 70px;
-}
-
-.v-button {
-    color: #191D28;
-    font-family: 'Poppins SemiBold';
-    font-size: 14px;
-    font-weight: 600;
-    letter-spacing: 0;
-    line-height: 21px;
+.anticon {
+    display: inline-block;
+    color: inherit;
+    font-style: normal;
+    line-height: 0;
     text-align: center;
-    padding: 0.375em 2em;
-}
-
-.v-button-large {
-    height: 48px;
-    border-radius: 24px;
-}
-
-.v-button-primary {
-    background-color: #FAD20B;
-}
-
-.capitalize {
-    text-transform: capitalize !important;
-}
-
-.description {
-    color: #BFC1CD;
-    font-family: Roboto;
-    font-size: 16px;
-    letter-spacing: 0;
-    line-height: 30px;
-}
-
-.layout-popular-courses-content{
-    
-}
-
-.layout-pupular-courses-content .heading{
-    color: #191D28;
-    padding-left: 15px;
-    font-family: 'Poppins ExtraBold';
-    font-weight: 800;
-    letter-spacing: -1px;
-    line-height: 60px;
-    font-size: 40px;
-}
+    text-transform: none;
+    vertical-align: -0.125em;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .anticon > * {
+    line-height: 1;
+  }
+  
+  .anticon svg {
+    display: inline-block;
+  }
+  
+  .anticon::before {
+    display: none;
+  }
+  
+  .anticon .anticon-icon {
+    display: block;
+  }
+  
+  .anticon[tabindex] {
+    cursor: pointer;
+  }
+  
+  .anticon-spin::before,
+  .anticon-spin {
+    display: inline-block;
+    -webkit-animation: loadingCircle 1s infinite linear;
+    animation: loadingCircle 1s infinite linear;
+  }
+  
+  @-webkit-keyframes loadingCircle {
+    100% {
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes loadingCircle {
+    100% {
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+  

@@ -1,56 +1,115 @@
-<header>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-between">
-    <a class="navbar-brand p-4" href="#">
-    	<img src="/assets/logo.svg">
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item active">
-          <%= link_to 'Home', root_path, class: "nav-link" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to 'Courses', courses_path, class: "nav-link" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to 'Categories', categories_path, class: "nav-link" %>
-        </li>
-      </ul>
-    </div>
-    <div class="navbar-nav ml-auto">
-      <ul class="navbar-nav">
-        <li class="nav-item p-1">
-        <div class="input-group input-group-sm">
-    		  <input type="text" class="form-control" placeholder="Whatchu want to learn?">
-      		  <div class="input-group-append">
-      		    <button class="btn btn-outline-secondary" type="button">Search</button>
-      		  </div>
-    		</div>
-        </li>
-        <li class="nav-item p-0">
-          <% if current_user  %>
-          <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <%= current_user.email %>
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <%= link_to "Enrolled Courses", '#', class: "dropdown-item" %>
-          <%= link_to "Tests", '#', class: "dropdown-item" %>
-          <%= link_to "Profile", edit_user_registration_path, class: "dropdown-item" %>
-          <div class="dropdown-divider"></div>
-          <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+<div class="vs:hidden xlExtra:block">
+    <header class="v-layout-header flex justify-between bg-transparent">
+        <div class="v-layout-header__content flex">
+            <a class="v-logo-container p-4" href="/"><img class="v-logo" src="/assets/logo.svg" alt="Viblo Learning Logo" /></a>
+            <div class="flex flex-row w-full justify-between items-center">
+                <div class="v-menu">
+                    <ul class="ant-menu ant-menu-light ant-menu-root ant-menu-horizontal" role="menu">
+                        <li class="ant-menu-submenu ant-menu-submenu-horizontal ant-menu-overflowed-submenu" style="display:none" role="menuitem">
+                            <div class="ant-menu-submenu-title" aria-expanded="false" aria-haspopup="true"><span>···</span><i class="ant-menu-submenu-arrow"></i></div>
+                        </li>
+                        <li class="ant-menu-item" role="menuitem"><%= link_to "Home", root_path %></li>
+                        <li class="ant-menu-submenu ant-menu-submenu-horizontal ant-menu-overflowed-submenu" style="display:none" role="menuitem">
+                            <div class="ant-menu-submenu-title" aria-expanded="false" aria-haspopup="true"><span>···</span><i class="ant-menu-submenu-arrow"></i></div>
+                        </li>
+                        <li class="ant-menu-item" role="menuitem"><%= link_to "Course", courses_path %></li>
+                        <li class="ant-menu-submenu ant-menu-submenu-horizontal ant-menu-overflowed-submenu" style="display:none" role="menuitem">
+                            <div class="ant-menu-submenu-title" aria-expanded="false" aria-haspopup="true"><span>···</span><i class="ant-menu-submenu-arrow"></i></div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="flex flex-row items-center">
+                    <div class="v-searchbox mr-8">
+                        <span class="ant-input-search ant-input-affix-wrapper">
+                            <input type="text" placeholder="What do you want to learn?" value="" class="ant-input" />
+                            <span class="ant-input-suffix">
+                                <i aria-label="icon: search" tabindex="-1" class="anticon anticon-search ant-input-search-icon">
+                                    <svg viewBox="64 64 896 896" focusable="false" class="" data-icon="search" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                                        <path d="M909.6 854.5L649.9 594.8C690.2 542.7 712 479 712 412c0-80.2-31.3-155.4-87.9-212.1-56.6-56.7-132-87.9-212.1-87.9s-155.5 31.3-212.1 87.9C143.2 256.5 112 331.8 112 412c0 80.1 31.3 155.5 87.9 212.1C256.5 680.8 331.8 712 412 712c67 0 130.6-21.8 182.7-62l259.7 259.6a8.2 8.2 0 0 0 11.6 0l43.6-43.5a8.2 8.2 0 0 0 0-11.6zM570.4 570.4C528 612.7 471.8 636 412 636s-116-23.3-158.4-65.6C211.3 528 188 471.8 188 412s23.3-116.1 65.6-158.4C296 211.3 352.2 188 412 188s116.1 23.2 158.4 65.6S636 352.2 636 412s-23.3 116.1-65.6 158.4z"></path>
+                                    </svg>
+                                </i>
+                            </span>
+                        </span>
+                    </div>
+                    <% if current_user %>
+                    <div class="flex ant-dropdown-trigger dropdown">
+                        <span role="img" aria-label="caret-down" class="anticon anticon-caret-down flex items-center cursor-pointer" data-toggle="dropdown"><svg viewBox="0 0 1024 1024" focusable="false" class="" data-icon="caret-down" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M840.4 300H183.6c-19.7 0-30.7 20.8-18.5 35l328.4 380.8c9.4 10.9 27.5 10.9 37 0L858.9 335c12.2-14.2 1.2-35-18.5-35z"></path></svg></span>
+                        <span class="name flex items-center cursor-pointer" data-toggle="dropdown">chiennt</span>
+                        <div class="flex items-center border-avatar" data-toggle="dropdown"><img class="v-avatar cursor-pointer" src="https://images.viblo.asia/60/03d3db71-0e38-4090-8d36-5a293591764e.png" srcset="https://images.viblo.asia/120/03d3db71-0e38-4090-8d36-5a293591764e.png 2x" alt="chiennt" style="width: 60px; height: 60px;"></div>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                          <%= link_to "Enrolled Courses", '#', class: "dropdown-item" %>
+                          <%= link_to "Tests", '#', class: "dropdown-item" %>
+                          <%= link_to "Profile", edit_user_registration_path, class: "dropdown-item" %>
+                          <div class="dropdown-divider"></div>
+                          <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+                        </div>
+                    </div>
+                    <% else %>
+                    <div>
+                        <%= link_to "Sign In", new_user_session_path, class: "btn-login font-bold mr-5" %>
+                        <button class="capitalize v-button v-button-primary v-button-large"><%= link_to "Register", new_user_registration_path %></button>
+                    </div>
+                    <% end %>
+
+                </div>
+            </div>
         </div>
-      </li>
-          <% else %>
-          <%= link_to "Sign In", new_user_session_path, class: "nav-link" %>
-          <li class="nav-item p-0">
-            <%= link_to "Register", new_user_registration_path, class: "nav-link", class: "nav-link" %>
-          </li>
-          <% end %>
-        </li>
-      </ul>
+    </header>
+</div>
+<div class="sm-header vs:block xlExtra:hidden">
+    <div class="sm-header__header">
+        <div class="sm-header__top">
+            <div class="sm-header__top__logo"><a class="v-logo-container " href="/"><img class="v-logo" src="/assets/logo.svg" alt="Viblo Learning Logo" /></a></div>
+            <div class="sm-header__top__btn-nav sm-header__top__btn-nav--left">
+                <div class="flex flex-row w-full justify-between">
+                <div class="v-menu">
+                    <ul class="ant-menu ant-menu-light ant-menu-root ant-menu-horizontal" role="menu">
+                        <li class="ant-menu-submenu ant-menu-submenu-horizontal ant-menu-overflowed-submenu" style="display:none" role="menuitem">
+                            <div class="ant-menu-submenu-title" aria-expanded="false" aria-haspopup="true"><span>···</span><i class="ant-menu-submenu-arrow"></i></div>
+                        </li>
+                        <li class="ant-menu-item" role="menuitem"><%= link_to "Home", root_path %></li>
+                        <li class="ant-menu-submenu ant-menu-submenu-horizontal ant-menu-overflowed-submenu" style="display:none" role="menuitem">
+                            <div class="ant-menu-submenu-title" aria-expanded="false" aria-haspopup="true"><span>···</span><i class="ant-menu-submenu-arrow"></i></div>
+                        </li>
+                        <li class="ant-menu-item" role="menuitem"><%= link_to "Course", courses_path %></li>
+                        <li class="ant-menu-submenu ant-menu-submenu-horizontal ant-menu-overflowed-submenu" style="display:none" role="menuitem">
+                            <div class="ant-menu-submenu-title" aria-expanded="false" aria-haspopup="true"><span>···</span><i class="ant-menu-submenu-arrow"></i></div>
+                        </li>
+                        <li class="ant-menu-item" role="menuitem">
+                            <input type="text" placeholder="What do you want to learn?" value="" class="ant-input" />
+                            <span class="ant-input-suffix">
+                                <i aria-label="icon: search" tabindex="-1" class="anticon anticon-search ant-input-search-icon">
+                                    <svg viewBox="64 64 896 896" focusable="false" class="" data-icon="search" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                                        <path d="M909.6 854.5L649.9 594.8C690.2 542.7 712 479 712 412c0-80.2-31.3-155.4-87.9-212.1-56.6-56.7-132-87.9-212.1-87.9s-155.5 31.3-212.1 87.9C143.2 256.5 112 331.8 112 412c0 80.1 31.3 155.5 87.9 212.1C256.5 680.8 331.8 712 412 712c67 0 130.6-21.8 182.7-62l259.7 259.6a8.2 8.2 0 0 0 11.6 0l43.6-43.5a8.2 8.2 0 0 0 0-11.6zM570.4 570.4C528 612.7 471.8 636 412 636s-116-23.3-158.4-65.6C211.3 528 188 471.8 188 412s23.3-116.1 65.6-158.4C296 211.3 352.2 188 412 188s116.1 23.2 158.4 65.6S636 352.2 636 412s-23.3 116.1-65.6 158.4z"></path>
+                                    </svg>
+                                </i>
+                            </span>
+                       
+                        </li>
+                    </ul>
+                </div>
+                <div class="flex flex-row items-center">
+                    <% if current_user %>
+                    <div class="flex ant-dropdown-trigger dropdown">
+                        <span role="img" aria-label="caret-down" class="anticon anticon-caret-down flex items-center cursor-pointer" data-toggle="dropdown"><svg viewBox="0 0 1024 1024" focusable="false" class="" data-icon="caret-down" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M840.4 300H183.6c-19.7 0-30.7 20.8-18.5 35l328.4 380.8c9.4 10.9 27.5 10.9 37 0L858.9 335c12.2-14.2 1.2-35-18.5-35z"></path></svg></span>
+                        <span class="name flex items-center cursor-pointer" data-toggle="dropdown">chiennt</span>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                          <%= link_to "Enrolled Courses", '#', class: "dropdown-item" %>
+                          <%= link_to "Tests", '#', class: "dropdown-item" %>
+                          <%= link_to "Profile", edit_user_registration_path, class: "dropdown-item" %>
+                          <div class="dropdown-divider"></div>
+                          <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+                        </div>
+                    </div>
+                    <% else %>
+                    <div class="flex">
+                        <%= link_to "Sign In", new_user_session_path, class: "capitalize v-button v-button-small" %>
+                        <%= link_to "Register", new_user_registration_path, class: "capitalize v-button v-button-primary v-button-small" %>
+                    </div>
+                    <% end %>
+                </div>
+            </div>
+            </div>
+        </div>
     </div>
-  </nav>
-</header>
+</div>

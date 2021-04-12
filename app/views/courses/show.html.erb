@@ -1,118 +1,277 @@
 <% provide(:title, "Course Title") %>
-<section class="detail-banner">
-    <div class="detail-banner__main detail-banner__breadcrumb">
-        <ol class="breadcrumb bg-transparent text-white">
-            <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item">
-                <%= link_to "Course", courses_path %>
-            </li>
-            <li class="breadcrumb-item active"><%=@course.course_name%></li>
-        </ol>
-    </div>
-    <div class="course-main pt-2">
-        <div class="course-main__content pt-0">
-            <p class="course-main__content__name text-white">
-                <%=@course.course_name%>
-            </p>
-            <p class="course-markdown__desc">
-            <div class="md-contents">
-                <p>Hypertext Markup Language (HTML) is the standard markup language for documents designed to be displayed in a web browser. It can be assisted by technologies such as Cascading Style Sheets (CSS) and scripting languages such as JavaScript.</p>
-                <p>Web browsers receive HTML documents from a web server or from local storage and render the documents into multimedia web pages. HTML describes the structure of a web page semantically and originally included cues for the appearance of the document.</p>
-                <p>The latest version of HTML is HTML5, maintained by the World Wide Web Consortium (W3C).</p>
+<main class="v-layout-content flex-shrink-0 ant-layout-content">
+   <div class="ant-row">
+      <div class="ant-col v-layout-container ant-col-xs-24 ant-col-lg-24">
+         <section class="detail-banner relative " style="background:url(&quot;/assets/banner-course-detail.png&quot;);min-height:35vh">
+            <div class="detail-banner__main detail-banner__breadcrumb">
+               <div class="py-3 ant-breadcrumb"><span><span class="ant-breadcrumb-link"><a href="/">Home</a></span><span class="ant-breadcrumb-separator">&gt;</span></span><span><span class="ant-breadcrumb-link"><a href="/courses">Courses</a></span><span class="ant-breadcrumb-separator">&gt;</span></span><span><span class="ant-breadcrumb-link"><a href="/courses/html-for-beginners-4y1aKrReQG">HTML for Beginners</a></span><span class="ant-breadcrumb-separator">&gt;</span></span></div>
             </div>
-            </p>
-        </div>
-        <div class="course-main__info row">
-            <div class="col">
-                <a href="#" class="badge badge-primary">Beginning Level</a>
+            <div class="course-main v-layout-center pt-5">
+               <div class="ant-col course-main__col ant-col-xs-24 ant-col-sm-24 ant-col-lg-16">
+                  <div class="text-center toErroll mobile-button-show">
+                     <span role="img" aria-label="book" class="anticon anticon-book">
+                        <svg viewBox="64 64 896 896" focusable="false" class="" data-icon="book" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                           <path d="M832 64H192c-17.7 0-32 14.3-32 32v832c0 17.7 14.3 32 32 32h640c17.7 0 32-14.3 32-32V96c0-17.7-14.3-32-32-32zm-260 72h96v209.9L621.5 312 572 347.4V136zm220 752H232V136h280v296.9c0 3.3 1 6.6 3 9.3a15.9 15.9 0 0022.3 3.7l83.8-59.9 81.4 59.4c2.7 2 6 3.1 9.4 3.1 8.8 0 16-7.2 16-16V136h64v752z"></path>
+                        </svg>
+                     </span>
+                  </div>
+                  <div class="course-main__content mb-8" style="min-height:20vh">
+                     <p class="course-main__content__name text-white">HTML for Beginners</p>
+                     <p class="course-markdown__desc">
+                     <div class="md-contents">
+                        <p>Hypertext Markup Language (HTML) is the standard markup language for documents designed to be displayed in a web browser. It can be assisted by technologies such as Cascading Style Sheets (CSS) and scripting languages such as JavaScript.</p>
+                        <p>Web browsers receive HTML documents from a web server or from local storage and render the documents into multimedia web pages. HTML describes the structure of a web page semantically and originally included cues for the appearance of the document.</p>
+                        <p>The latest version of HTML is HTML5, maintained by the World Wide Web Consortium (W3C).</p>
+                     </div>
+                     </p>
+                  </div>
+                  <div class="ant-row mb-6 text-sm flex">
+                    
+                  </div>
+                  <div class="ant-row course-main__info">
+                     <div class="ant-col ant-col-6">
+                        
+                     </div>
+                     <div class="ant-col ant-col-12"></div>
+                     <div class="ant-col ant-col-6">
+                        <p class="vs:text-xs md:text-sm lg:text-base">
+                           <i aria-label="icon: calendar" class="anticon anticon-calendar">
+                              <svg viewBox="64 64 896 896" focusable="false" class="" data-icon="calendar" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                                 <path d="M880 184H712v-64c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v64H384v-64c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v64H144c-17.7 0-32 14.3-32 32v664c0 17.7 14.3 32 32 32h736c17.7 0 32-14.3 32-32V216c0-17.7-14.3-32-32-32zm-40 656H184V460h656v380zM184 392V256h128v48c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8v-48h256v48c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8v-48h128v136H184z"></path>
+                              </svg>
+                           </i>
+                           <!-- -->Last updated<!-- --> <!-- -->1/2021
+                        </p>
+                     </div>
+                  </div>
+               </div>
             </div>
-            <div class="col">
-                <p>
-                    <i class="far fa-calendar-alt"></i>
-                    <span>
-                        Last updated 1/2021
-                    </span>
-                </p>
-            </div>
-        </div>
-    </div>
-</section>
-<section class="course-main">
-    <div class="row jumbotron">
-        <div class="col-8">
-            <p class="text">
-                Objectives List
-            </p>
-            <div class="objective-list">
-                <div class="card border-light mb-3">
-                    <div class="card-header">
-                        <div class="d-flex">
-                            <span><%= @course.course_name %></span>
-                            <span class="ml-auto">
-                                60 questions/30 minutes
-                            </span>
+         </section>
+         <section class="course-main v-layout-center py-8">
+            <div class="ant-row" style="margin-left:-12px;margin-right:-12px">
+               <div style="padding-left:12px;padding-right:12px" class="ant-col ant-col-xs-24 ant-col-sm-24 ant-col-lg-16">
+                  <p class="text">Exams list</p>
+                  <div class="exam-list">
+                     <div class="ant-card exam-card mb-8">
+                        <div class="ant-card-head">
+                           <div class="ant-card-head-wrapper">
+                              <div class="ant-card-head-title">HTML for Beginners Exam</div>
+                              <div class="ant-card-extra">80 questions/1 hour 30 minutes </div>
+                           </div>
                         </div>
-                    </div>
-                    <div class="card-body pt-0">
-                        <div class="d-flex flex-column">
-                            <div class="p-2 border-bottom">
-                                <i class="far fa-file-alt text-warning mr-2"></i>
-                                <span class="mr-5">
+                        <div class="ant-card-body">
+                           <div class="overflow-hidden description mb-4">
+                              <div class="flex exam-item">
+                                 <i aria-label="icon: file-text" class="anticon anticon-file-text mr-3">
+                                    <svg viewBox="64 64 896 896" focusable="false" class="" data-icon="file-text" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                                       <path d="M854.6 288.6L639.4 73.4c-6-6-14.1-9.4-22.6-9.4H192c-17.7 0-32 14.3-32 32v832c0 17.7 14.3 32 32 32h640c17.7 0 32-14.3 32-32V311.3c0-8.5-3.4-16.7-9.4-22.7zM790.2 326H602V137.8L790.2 326zm1.8 562H232V136h302v216a42 42 0 0 0 42 42h216v494zM504 618H320c-4.4 0-8 3.6-8 8v48c0 4.4 3.6 8 8 8h184c4.4 0 8-3.6 8-8v-48c0-4.4-3.6-8-8-8zM312 490v48c0 4.4 3.6 8 8 8h384c4.4 0 8-3.6 8-8v-48c0-4.4-3.6-8-8-8H320c-4.4 0-8 3.6-8 8z"></path>
+                                    </svg>
+                                 </i>
+                                 <p class="flex mr-8">
                                     Objective
-                                </span>
-                                <span>Media Querry and Responsive Design</p>
-                            </div>
-                            <div class="p-2 border-bottom">
-                                <i class="far fa-file-alt text-warning mr-2"></i>
-                                <span class="mr-5">
+                                 </p>
+                                 <p>Basic Concepts and Page Structure</p>
+                                 <div class="show-question-list-button  float-right">
+                                    <span role="img" aria-label="question-circle" class="anticon anticon-question-circle">
+                                       <svg viewBox="64 64 896 896" focusable="false" class="" data-icon="question-circle" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                                          <path d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 708c-22.1 0-40-17.9-40-40s17.9-40 40-40 40 17.9 40 40-17.9 40-40 40zm62.9-219.5a48.3 48.3 0 00-30.9 44.8V620c0 4.4-3.6 8-8 8h-48c-4.4 0-8-3.6-8-8v-21.5c0-23.1 6.7-45.9 19.9-64.9 12.9-18.6 30.9-32.8 52.1-40.9 34-13.1 56-41.6 56-72.7 0-44.1-43.1-80-96-80s-96 35.9-96 80v7.6c0 4.4-3.6 8-8 8h-48c-4.4 0-8-3.6-8-8V420c0-39.3 17.2-76 48.4-103.3C430.4 290.4 470 276 512 276s81.6 14.5 111.6 40.7C654.8 344 672 380.7 672 420c0 57.8-38.1 109.8-97.1 132.5z"></path>
+                                       </svg>
+                                    </span>
+                                 </div>
+                              </div>
+                              <div class="flex exam-item">
+                                 <i aria-label="icon: file-text" class="anticon anticon-file-text mr-3">
+                                    <svg viewBox="64 64 896 896" focusable="false" class="" data-icon="file-text" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                                       <path d="M854.6 288.6L639.4 73.4c-6-6-14.1-9.4-22.6-9.4H192c-17.7 0-32 14.3-32 32v832c0 17.7 14.3 32 32 32h640c17.7 0 32-14.3 32-32V311.3c0-8.5-3.4-16.7-9.4-22.7zM790.2 326H602V137.8L790.2 326zm1.8 562H232V136h302v216a42 42 0 0 0 42 42h216v494zM504 618H320c-4.4 0-8 3.6-8 8v48c0 4.4 3.6 8 8 8h184c4.4 0 8-3.6 8-8v-48c0-4.4-3.6-8-8-8zM312 490v48c0 4.4 3.6 8 8 8h384c4.4 0 8-3.6 8-8v-48c0-4.4-3.6-8-8-8H320c-4.4 0-8 3.6-8 8z"></path>
+                                    </svg>
+                                 </i>
+                                 <p class="flex mr-8">
                                     Objective
-                                </span>
-                                <span>Flexbox Layout</p>
-                            </div>
-                            <div class="p-2 border-bottom">
-                                <i class="far fa-file-alt text-warning mr-2"></i>
-                                <span class="mr-5">
+                                 </p>
+                                 <p>Elements and Attributes</p>
+                                 <div class="show-question-list-button  float-right">
+                                    <span role="img" aria-label="question-circle" class="anticon anticon-question-circle">
+                                       <svg viewBox="64 64 896 896" focusable="false" class="" data-icon="question-circle" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                                          <path d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 708c-22.1 0-40-17.9-40-40s17.9-40 40-40 40 17.9 40 40-17.9 40-40 40zm62.9-219.5a48.3 48.3 0 00-30.9 44.8V620c0 4.4-3.6 8-8 8h-48c-4.4 0-8-3.6-8-8v-21.5c0-23.1 6.7-45.9 19.9-64.9 12.9-18.6 30.9-32.8 52.1-40.9 34-13.1 56-41.6 56-72.7 0-44.1-43.1-80-96-80s-96 35.9-96 80v7.6c0 4.4-3.6 8-8 8h-48c-4.4 0-8-3.6-8-8V420c0-39.3 17.2-76 48.4-103.3C430.4 290.4 470 276 512 276s81.6 14.5 111.6 40.7C654.8 344 672 380.7 672 420c0 57.8-38.1 109.8-97.1 132.5z"></path>
+                                       </svg>
+                                    </span>
+                                 </div>
+                              </div>
+                              <div class="flex exam-item">
+                                 <i aria-label="icon: file-text" class="anticon anticon-file-text mr-3">
+                                    <svg viewBox="64 64 896 896" focusable="false" class="" data-icon="file-text" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                                       <path d="M854.6 288.6L639.4 73.4c-6-6-14.1-9.4-22.6-9.4H192c-17.7 0-32 14.3-32 32v832c0 17.7 14.3 32 32 32h640c17.7 0 32-14.3 32-32V311.3c0-8.5-3.4-16.7-9.4-22.7zM790.2 326H602V137.8L790.2 326zm1.8 562H232V136h302v216a42 42 0 0 0 42 42h216v494zM504 618H320c-4.4 0-8 3.6-8 8v48c0 4.4 3.6 8 8 8h184c4.4 0 8-3.6 8-8v-48c0-4.4-3.6-8-8-8zM312 490v48c0 4.4 3.6 8 8 8h384c4.4 0 8-3.6 8-8v-48c0-4.4-3.6-8-8-8H320c-4.4 0-8 3.6-8 8z"></path>
+                                    </svg>
+                                 </i>
+                                 <p class="flex mr-8">
                                     Objective
-                                </span>
-                                <span>Grid Layout</p>
-                            </div>
-                            <div class="p-2 border-bottom">
-                                <i class="far fa-file-alt text-warning mr-2"></i>
-                                <span class="mr-5">
+                                 </p>
+                                 <p>Text Formatting</p>
+                                 <div class="show-question-list-button  float-right">
+                                    <span role="img" aria-label="question-circle" class="anticon anticon-question-circle">
+                                       <svg viewBox="64 64 896 896" focusable="false" class="" data-icon="question-circle" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                                          <path d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 708c-22.1 0-40-17.9-40-40s17.9-40 40-40 40 17.9 40 40-17.9 40-40 40zm62.9-219.5a48.3 48.3 0 00-30.9 44.8V620c0 4.4-3.6 8-8 8h-48c-4.4 0-8-3.6-8-8v-21.5c0-23.1 6.7-45.9 19.9-64.9 12.9-18.6 30.9-32.8 52.1-40.9 34-13.1 56-41.6 56-72.7 0-44.1-43.1-80-96-80s-96 35.9-96 80v7.6c0 4.4-3.6 8-8 8h-48c-4.4 0-8-3.6-8-8V420c0-39.3 17.2-76 48.4-103.3C430.4 290.4 470 276 512 276s81.6 14.5 111.6 40.7C654.8 344 672 380.7 672 420c0 57.8-38.1 109.8-97.1 132.5z"></path>
+                                       </svg>
+                                    </span>
+                                 </div>
+                              </div>
+                              <div class="flex exam-item">
+                                 <i aria-label="icon: file-text" class="anticon anticon-file-text mr-3">
+                                    <svg viewBox="64 64 896 896" focusable="false" class="" data-icon="file-text" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                                       <path d="M854.6 288.6L639.4 73.4c-6-6-14.1-9.4-22.6-9.4H192c-17.7 0-32 14.3-32 32v832c0 17.7 14.3 32 32 32h640c17.7 0 32-14.3 32-32V311.3c0-8.5-3.4-16.7-9.4-22.7zM790.2 326H602V137.8L790.2 326zm1.8 562H232V136h302v216a42 42 0 0 0 42 42h216v494zM504 618H320c-4.4 0-8 3.6-8 8v48c0 4.4 3.6 8 8 8h184c4.4 0 8-3.6 8-8v-48c0-4.4-3.6-8-8-8zM312 490v48c0 4.4 3.6 8 8 8h384c4.4 0 8-3.6 8-8v-48c0-4.4-3.6-8-8-8H320c-4.4 0-8 3.6-8 8z"></path>
+                                    </svg>
+                                 </i>
+                                 <p class="flex mr-8">
                                     Objective
-                                </span>
-                                <span>Table Layout</p>
-                            </div>
-                            <div class="p-2 border-bottom">
-                                <i class="far fa-file-alt text-warning mr-2"></i>
-                                <span class="mr-5">
+                                 </p>
+                                 <p>Phrase Tags</p>
+                                 <div class="show-question-list-button  float-right">
+                                    <span role="img" aria-label="question-circle" class="anticon anticon-question-circle">
+                                       <svg viewBox="64 64 896 896" focusable="false" class="" data-icon="question-circle" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                                          <path d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 708c-22.1 0-40-17.9-40-40s17.9-40 40-40 40 17.9 40 40-17.9 40-40 40zm62.9-219.5a48.3 48.3 0 00-30.9 44.8V620c0 4.4-3.6 8-8 8h-48c-4.4 0-8-3.6-8-8v-21.5c0-23.1 6.7-45.9 19.9-64.9 12.9-18.6 30.9-32.8 52.1-40.9 34-13.1 56-41.6 56-72.7 0-44.1-43.1-80-96-80s-96 35.9-96 80v7.6c0 4.4-3.6 8-8 8h-48c-4.4 0-8-3.6-8-8V420c0-39.3 17.2-76 48.4-103.3C430.4 290.4 470 276 512 276s81.6 14.5 111.6 40.7C654.8 344 672 380.7 672 420c0 57.8-38.1 109.8-97.1 132.5z"></path>
+                                       </svg>
+                                    </span>
+                                 </div>
+                              </div>
+                              <div class="flex exam-item">
+                                 <i aria-label="icon: file-text" class="anticon anticon-file-text mr-3">
+                                    <svg viewBox="64 64 896 896" focusable="false" class="" data-icon="file-text" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                                       <path d="M854.6 288.6L639.4 73.4c-6-6-14.1-9.4-22.6-9.4H192c-17.7 0-32 14.3-32 32v832c0 17.7 14.3 32 32 32h640c17.7 0 32-14.3 32-32V311.3c0-8.5-3.4-16.7-9.4-22.7zM790.2 326H602V137.8L790.2 326zm1.8 562H232V136h302v216a42 42 0 0 0 42 42h216v494zM504 618H320c-4.4 0-8 3.6-8 8v48c0 4.4 3.6 8 8 8h184c4.4 0 8-3.6 8-8v-48c0-4.4-3.6-8-8-8zM312 490v48c0 4.4 3.6 8 8 8h384c4.4 0 8-3.6 8-8v-48c0-4.4-3.6-8-8-8H320c-4.4 0-8 3.6-8 8z"></path>
+                                    </svg>
+                                 </i>
+                                 <p class="flex mr-8">
                                     Objective
-                                </span>
-                                <span>2D and 3D Transforms</p>
-                            </div>
-                            <div class="p-2 border-bottom">
-                                <i class="far fa-file-alt text-warning mr-2"></i>
-                                <span class="mr-5">
+                                 </p>
+                                 <p>Head Element, Meta Tag and Comments</p>
+                                 <div class="show-question-list-button  float-right">
+                                    <span role="img" aria-label="question-circle" class="anticon anticon-question-circle">
+                                       <svg viewBox="64 64 896 896" focusable="false" class="" data-icon="question-circle" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                                          <path d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 708c-22.1 0-40-17.9-40-40s17.9-40 40-40 40 17.9 40 40-17.9 40-40 40zm62.9-219.5a48.3 48.3 0 00-30.9 44.8V620c0 4.4-3.6 8-8 8h-48c-4.4 0-8-3.6-8-8v-21.5c0-23.1 6.7-45.9 19.9-64.9 12.9-18.6 30.9-32.8 52.1-40.9 34-13.1 56-41.6 56-72.7 0-44.1-43.1-80-96-80s-96 35.9-96 80v7.6c0 4.4-3.6 8-8 8h-48c-4.4 0-8-3.6-8-8V420c0-39.3 17.2-76 48.4-103.3C430.4 290.4 470 276 512 276s81.6 14.5 111.6 40.7C654.8 344 672 380.7 672 420c0 57.8-38.1 109.8-97.1 132.5z"></path>
+                                       </svg>
+                                    </span>
+                                 </div>
+                              </div>
+                              <div class="flex exam-item">
+                                 <i aria-label="icon: file-text" class="anticon anticon-file-text mr-3">
+                                    <svg viewBox="64 64 896 896" focusable="false" class="" data-icon="file-text" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                                       <path d="M854.6 288.6L639.4 73.4c-6-6-14.1-9.4-22.6-9.4H192c-17.7 0-32 14.3-32 32v832c0 17.7 14.3 32 32 32h640c17.7 0 32-14.3 32-32V311.3c0-8.5-3.4-16.7-9.4-22.7zM790.2 326H602V137.8L790.2 326zm1.8 562H232V136h302v216a42 42 0 0 0 42 42h216v494zM504 618H320c-4.4 0-8 3.6-8 8v48c0 4.4 3.6 8 8 8h184c4.4 0 8-3.6 8-8v-48c0-4.4-3.6-8-8-8zM312 490v48c0 4.4 3.6 8 8 8h384c4.4 0 8-3.6 8-8v-48c0-4.4-3.6-8-8-8H320c-4.4 0-8 3.6-8 8z"></path>
+                                    </svg>
+                                 </i>
+                                 <p class="flex mr-8">
                                     Objective
-                                </span>
-                                <span>Transitions</p>
-                            </div>
-                            <div class="p-2 border-bottom">
-                                <i class="far fa-file-alt text-warning mr-2"></i>
-                                <span class="mr-5">
+                                 </p>
+                                 <p>Multimedia and embedding</p>
+                                 <div class="show-question-list-button  float-right">
+                                    <span role="img" aria-label="question-circle" class="anticon anticon-question-circle">
+                                       <svg viewBox="64 64 896 896" focusable="false" class="" data-icon="question-circle" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                                          <path d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 708c-22.1 0-40-17.9-40-40s17.9-40 40-40 40 17.9 40 40-17.9 40-40 40zm62.9-219.5a48.3 48.3 0 00-30.9 44.8V620c0 4.4-3.6 8-8 8h-48c-4.4 0-8-3.6-8-8v-21.5c0-23.1 6.7-45.9 19.9-64.9 12.9-18.6 30.9-32.8 52.1-40.9 34-13.1 56-41.6 56-72.7 0-44.1-43.1-80-96-80s-96 35.9-96 80v7.6c0 4.4-3.6 8-8 8h-48c-4.4 0-8-3.6-8-8V420c0-39.3 17.2-76 48.4-103.3C430.4 290.4 470 276 512 276s81.6 14.5 111.6 40.7C654.8 344 672 380.7 672 420c0 57.8-38.1 109.8-97.1 132.5z"></path>
+                                       </svg>
+                                    </span>
+                                 </div>
+                              </div>
+                              <div class="flex exam-item">
+                                 <i aria-label="icon: file-text" class="anticon anticon-file-text mr-3">
+                                    <svg viewBox="64 64 896 896" focusable="false" class="" data-icon="file-text" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                                       <path d="M854.6 288.6L639.4 73.4c-6-6-14.1-9.4-22.6-9.4H192c-17.7 0-32 14.3-32 32v832c0 17.7 14.3 32 32 32h640c17.7 0 32-14.3 32-32V311.3c0-8.5-3.4-16.7-9.4-22.7zM790.2 326H602V137.8L790.2 326zm1.8 562H232V136h302v216a42 42 0 0 0 42 42h216v494zM504 618H320c-4.4 0-8 3.6-8 8v48c0 4.4 3.6 8 8 8h184c4.4 0 8-3.6 8-8v-48c0-4.4-3.6-8-8-8zM312 490v48c0 4.4 3.6 8 8 8h384c4.4 0 8-3.6 8-8v-48c0-4.4-3.6-8-8-8H320c-4.4 0-8 3.6-8 8z"></path>
+                                    </svg>
+                                 </i>
+                                 <p class="flex mr-8">
                                     Objective
-                                </span>
-                                <span>Animations</p>
+                                 </p>
+                                 <p>Tables</p>
+                                 <div class="show-question-list-button  float-right">
+                                    <span role="img" aria-label="question-circle" class="anticon anticon-question-circle">
+                                       <svg viewBox="64 64 896 896" focusable="false" class="" data-icon="question-circle" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                                          <path d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 708c-22.1 0-40-17.9-40-40s17.9-40 40-40 40 17.9 40 40-17.9 40-40 40zm62.9-219.5a48.3 48.3 0 00-30.9 44.8V620c0 4.4-3.6 8-8 8h-48c-4.4 0-8-3.6-8-8v-21.5c0-23.1 6.7-45.9 19.9-64.9 12.9-18.6 30.9-32.8 52.1-40.9 34-13.1 56-41.6 56-72.7 0-44.1-43.1-80-96-80s-96 35.9-96 80v7.6c0 4.4-3.6 8-8 8h-48c-4.4 0-8-3.6-8-8V420c0-39.3 17.2-76 48.4-103.3C430.4 290.4 470 276 512 276s81.6 14.5 111.6 40.7C654.8 344 672 380.7 672 420c0 57.8-38.1 109.8-97.1 132.5z"></path>
+                                       </svg>
+                                    </span>
+                                 </div>
+                              </div>
+                              <div class="flex exam-item">
+                                 <i aria-label="icon: file-text" class="anticon anticon-file-text mr-3">
+                                    <svg viewBox="64 64 896 896" focusable="false" class="" data-icon="file-text" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                                       <path d="M854.6 288.6L639.4 73.4c-6-6-14.1-9.4-22.6-9.4H192c-17.7 0-32 14.3-32 32v832c0 17.7 14.3 32 32 32h640c17.7 0 32-14.3 32-32V311.3c0-8.5-3.4-16.7-9.4-22.7zM790.2 326H602V137.8L790.2 326zm1.8 562H232V136h302v216a42 42 0 0 0 42 42h216v494zM504 618H320c-4.4 0-8 3.6-8 8v48c0 4.4 3.6 8 8 8h184c4.4 0 8-3.6 8-8v-48c0-4.4-3.6-8-8-8zM312 490v48c0 4.4 3.6 8 8 8h384c4.4 0 8-3.6 8-8v-48c0-4.4-3.6-8-8-8H320c-4.4 0-8 3.6-8 8z"></path>
+                                    </svg>
+                                 </i>
+                                 <p class="flex mr-8">
+                                    Objective
+                                 </p>
+                                 <p>Lists and Blocks</p>
+                                 <div class="show-question-list-button  float-right">
+                                    <span role="img" aria-label="question-circle" class="anticon anticon-question-circle">
+                                       <svg viewBox="64 64 896 896" focusable="false" class="" data-icon="question-circle" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                                          <path d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 708c-22.1 0-40-17.9-40-40s17.9-40 40-40 40 17.9 40 40-17.9 40-40 40zm62.9-219.5a48.3 48.3 0 00-30.9 44.8V620c0 4.4-3.6 8-8 8h-48c-4.4 0-8-3.6-8-8v-21.5c0-23.1 6.7-45.9 19.9-64.9 12.9-18.6 30.9-32.8 52.1-40.9 34-13.1 56-41.6 56-72.7 0-44.1-43.1-80-96-80s-96 35.9-96 80v7.6c0 4.4-3.6 8-8 8h-48c-4.4 0-8-3.6-8-8V420c0-39.3 17.2-76 48.4-103.3C430.4 290.4 470 276 512 276s81.6 14.5 111.6 40.7C654.8 344 672 380.7 672 420c0 57.8-38.1 109.8-97.1 132.5z"></path>
+                                       </svg>
+                                    </span>
+                                 </div>
+                              </div>
+                              <div class="flex exam-item">
+                                 <i aria-label="icon: file-text" class="anticon anticon-file-text mr-3">
+                                    <svg viewBox="64 64 896 896" focusable="false" class="" data-icon="file-text" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                                       <path d="M854.6 288.6L639.4 73.4c-6-6-14.1-9.4-22.6-9.4H192c-17.7 0-32 14.3-32 32v832c0 17.7 14.3 32 32 32h640c17.7 0 32-14.3 32-32V311.3c0-8.5-3.4-16.7-9.4-22.7zM790.2 326H602V137.8L790.2 326zm1.8 562H232V136h302v216a42 42 0 0 0 42 42h216v494zM504 618H320c-4.4 0-8 3.6-8 8v48c0 4.4 3.6 8 8 8h184c4.4 0 8-3.6 8-8v-48c0-4.4-3.6-8-8-8zM312 490v48c0 4.4 3.6 8 8 8h384c4.4 0 8-3.6 8-8v-48c0-4.4-3.6-8-8-8H320c-4.4 0-8 3.6-8 8z"></path>
+                                    </svg>
+                                 </i>
+                                 <p class="flex mr-8">
+                                    Objective
+                                 </p>
+                                 <p>Hyperlinks</p>
+                                 <div class="show-question-list-button  float-right">
+                                    <span role="img" aria-label="question-circle" class="anticon anticon-question-circle">
+                                       <svg viewBox="64 64 896 896" focusable="false" class="" data-icon="question-circle" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                                          <path d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 708c-22.1 0-40-17.9-40-40s17.9-40 40-40 40 17.9 40 40-17.9 40-40 40zm62.9-219.5a48.3 48.3 0 00-30.9 44.8V620c0 4.4-3.6 8-8 8h-48c-4.4 0-8-3.6-8-8v-21.5c0-23.1 6.7-45.9 19.9-64.9 12.9-18.6 30.9-32.8 52.1-40.9 34-13.1 56-41.6 56-72.7 0-44.1-43.1-80-96-80s-96 35.9-96 80v7.6c0 4.4-3.6 8-8 8h-48c-4.4 0-8-3.6-8-8V420c0-39.3 17.2-76 48.4-103.3C430.4 290.4 470 276 512 276s81.6 14.5 111.6 40.7C654.8 344 672 380.7 672 420c0 57.8-38.1 109.8-97.1 132.5z"></path>
+                                       </svg>
+                                    </span>
+                                 </div>
+                              </div>
+                              <div class="flex exam-item">
+                                 <i aria-label="icon: file-text" class="anticon anticon-file-text mr-3">
+                                    <svg viewBox="64 64 896 896" focusable="false" class="" data-icon="file-text" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                                       <path d="M854.6 288.6L639.4 73.4c-6-6-14.1-9.4-22.6-9.4H192c-17.7 0-32 14.3-32 32v832c0 17.7 14.3 32 32 32h640c17.7 0 32-14.3 32-32V311.3c0-8.5-3.4-16.7-9.4-22.7zM790.2 326H602V137.8L790.2 326zm1.8 562H232V136h302v216a42 42 0 0 0 42 42h216v494zM504 618H320c-4.4 0-8 3.6-8 8v48c0 4.4 3.6 8 8 8h184c4.4 0 8-3.6 8-8v-48c0-4.4-3.6-8-8-8zM312 490v48c0 4.4 3.6 8 8 8h384c4.4 0 8-3.6 8-8v-48c0-4.4-3.6-8-8-8H320c-4.4 0-8 3.6-8 8z"></path>
+                                    </svg>
+                                 </i>
+                                 <p class="flex mr-8">
+                                    Objective
+                                 </p>
+                                 <p>Fonts, Colors and Background</p>
+                                 <div class="show-question-list-button  float-right">
+                                    <span role="img" aria-label="question-circle" class="anticon anticon-question-circle">
+                                       <svg viewBox="64 64 896 896" focusable="false" class="" data-icon="question-circle" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                                          <path d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 708c-22.1 0-40-17.9-40-40s17.9-40 40-40 40 17.9 40 40-17.9 40-40 40zm62.9-219.5a48.3 48.3 0 00-30.9 44.8V620c0 4.4-3.6 8-8 8h-48c-4.4 0-8-3.6-8-8v-21.5c0-23.1 6.7-45.9 19.9-64.9 12.9-18.6 30.9-32.8 52.1-40.9 34-13.1 56-41.6 56-72.7 0-44.1-43.1-80-96-80s-96 35.9-96 80v7.6c0 4.4-3.6 8-8 8h-48c-4.4 0-8-3.6-8-8V420c0-39.3 17.2-76 48.4-103.3C430.4 290.4 470 276 512 276s81.6 14.5 111.6 40.7C654.8 344 672 380.7 672 420c0 57.8-38.1 109.8-97.1 132.5z"></path>
+                                       </svg>
+                                    </span>
+                                 </div>
+                              </div>
+                              <div class="flex exam-item">
+                                 <i aria-label="icon: file-text" class="anticon anticon-file-text mr-3">
+                                    <svg viewBox="64 64 896 896" focusable="false" class="" data-icon="file-text" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                                       <path d="M854.6 288.6L639.4 73.4c-6-6-14.1-9.4-22.6-9.4H192c-17.7 0-32 14.3-32 32v832c0 17.7 14.3 32 32 32h640c17.7 0 32-14.3 32-32V311.3c0-8.5-3.4-16.7-9.4-22.7zM790.2 326H602V137.8L790.2 326zm1.8 562H232V136h302v216a42 42 0 0 0 42 42h216v494zM504 618H320c-4.4 0-8 3.6-8 8v48c0 4.4 3.6 8 8 8h184c4.4 0 8-3.6 8-8v-48c0-4.4-3.6-8-8-8zM312 490v48c0 4.4 3.6 8 8 8h384c4.4 0 8-3.6 8-8v-48c0-4.4-3.6-8-8-8H320c-4.4 0-8 3.6-8 8z"></path>
+                                    </svg>
+                                 </i>
+                                 <p class="flex mr-8">
+                                    Objective
+                                 </p>
+                                 <p>Forms</p>
+                                 <div class="show-question-list-button  float-right">
+                                    <span role="img" aria-label="question-circle" class="anticon anticon-question-circle">
+                                       <svg viewBox="64 64 896 896" focusable="false" class="" data-icon="question-circle" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                                          <path d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 708c-22.1 0-40-17.9-40-40s17.9-40 40-40 40 17.9 40 40-17.9 40-40 40zm62.9-219.5a48.3 48.3 0 00-30.9 44.8V620c0 4.4-3.6 8-8 8h-48c-4.4 0-8-3.6-8-8v-21.5c0-23.1 6.7-45.9 19.9-64.9 12.9-18.6 30.9-32.8 52.1-40.9 34-13.1 56-41.6 56-72.7 0-44.1-43.1-80-96-80s-96 35.9-96 80v7.6c0 4.4-3.6 8-8 8h-48c-4.4 0-8-3.6-8-8V420c0-39.3 17.2-76 48.4-103.3C430.4 290.4 470 276 512 276s81.6 14.5 111.6 40.7C654.8 344 672 380.7 672 420c0 57.8-38.1 109.8-97.1 132.5z"></path>
+                                       </svg>
+                                    </span>
+                                 </div>
+                              </div>
+                           </div>
+                           <!-- Do Exam Button -->
+                           <% if current_user.present?%>
+                            <div class="flex-row text-center center sm:flex-col mt-10">
+                                <button type="button" class="capitalize v-button v-button-primary v-button-large" style="width:auto">
+                                    <%= link_to "Do Exam", new_course_exam_path(@course) %>
+                                </button>
                             </div>
-                        </div>
-                        <div class="d-flex text-center justify-content-center pt-4">
-                            <% if current_user.present?%>
-                            <%= link_to "Do Exam", new_course_exam_path(@course), class: "btn btn-warning btn-sm" %>
                             <% else %>
                             <!-- Button trigger modal -->
-                            <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#loginModal">
-                                Do Exam
-                            </button>
+                            <div class="flex-row text-center center sm:flex-col mt-10">
+                                <button type="button" class="capitalize v-button v-button-primary v-button-large" data-toggle="modal" data-target="#loginModal" style="width:auto">Do Exam</button>
+                            </div>
 
                             <!-- Modal -->
                             <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-hidden="true">
@@ -134,82 +293,136 @@
                                 </div>
                             </div>
                             <% end %>
+                           <!-- Do Exam Button -->
                         </div>
-                    </div>
-                </div>
+                     </div>
+                  </div>
+               </div>
+               <div style="padding-left:12px;padding-right:12px" class="ant-col px-4 ant-col-xs-24 ant-col-sm-24 ant-col-lg-8">
+                  <div class="not-for-mobile">
+                     <div class="close-btn-mobile">
+                        <span>
+                           <span role="img" aria-label="close-circle" class="anticon anticon-close-circle">
+                              <svg viewBox="64 64 896 896" focusable="false" class="" data-icon="close-circle" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                                 <path d="M685.4 354.8c0-4.4-3.6-8-8-8l-66 .3L512 465.6l-99.3-118.4-66.1-.3c-4.4 0-8 3.5-8 8 0 1.9.7 3.7 1.9 5.2l130.1 155L340.5 670a8.32 8.32 0 00-1.9 5.2c0 4.4 3.6 8 8 8l66.1-.3L512 564.4l99.3 118.4 66 .3c4.4 0 8-3.5 8-8 0-1.9-.7-3.7-1.9-5.2L553.5 515l130.1-155c1.2-1.4 1.8-3.3 1.8-5.2z"></path>
+                                 <path d="M512 65C264.6 65 64 265.6 64 513s200.6 448 448 448 448-200.6 448-448S759.4 65 512 65zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"></path>
+                              </svg>
+                           </span>
+                        </span>
+                     </div>
+                     <div class="course-detail mb-4">
+                        <div class="course-detail__thumbnail mb-2 p-2"><img src="https://learn.viblo.asia/uploads/f/6/f6ef804f-2840-4f23-8e7b-86404bde30a8.jpg" alt="Thumbnail" class="mx-auto align-middle max-w-xl w-full max-h-full"></div>
+                        <div class="course-detail__enroll py-6">
+                           <div class="text-center"><button type="button" class="capitalize enrolled v-button v-button-primary v-button-large v-button-disable " style="width:300px" disabled="">Enrolled</button></div>
+                        </div>
+                        <div class="course-detail__info py-6 pl-10 flex items-center">
+                           <i aria-label="icon: book" class="anticon anticon-book mr-3">
+                              <svg viewBox="64 64 896 896" focusable="false" class="" data-icon="book" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                                 <path d="M832 64H192c-17.7 0-32 14.3-32 32v832c0 17.7 14.3 32 32 32h640c17.7 0 32-14.3 32-32V96c0-17.7-14.3-32-32-32zm-260 72h96v209.9L621.5 312 572 347.4V136zm220 752H232V136h280v296.9c0 3.3 1 6.6 3 9.3a15.9 15.9 0 0 0 22.3 3.7l83.8-59.9 81.4 59.4c2.7 2 6 3.1 9.4 3.1 8.8 0 16-7.2 16-16V136h64v752z"></path>
+                              </svg>
+                           </i>
+                           <p>This course includes:</p>
+                        </div>
+                        <div class="course-detail__include">
+                           <div class="flex justify-between pt-4 px-10">
+                              <div class="course-detail__include__left flex items-center">
+                                 <i aria-label="icon: clock-circle" class="anticon anticon-clock-circle mr-4">
+                                    <svg viewBox="64 64 896 896" focusable="false" class="" data-icon="clock-circle" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                                       <path d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"></path>
+                                       <path d="M686.7 638.6L544.1 535.5V288c0-4.4-3.6-8-8-8H488c-4.4 0-8 3.6-8 8v275.4c0 2.6 1.2 5 3.3 6.5l165.4 120.6c3.6 2.6 8.6 1.8 11.2-1.7l28.6-39c2.6-3.7 1.8-8.7-1.8-11.2z"></path>
+                                    </svg>
+                                 </i>
+                                 <p>Duration</p>
+                              </div>
+                              <div class="course-detail__include__right">
+                                 <p>1 hour 30 minutes </p>
+                              </div>
+                           </div>
+                           <div class="flex justify-between px-10">
+                              <div class="course-detail__include__left flex items-center">
+                                 <i aria-label="icon: file-text" class="anticon anticon-file-text mr-4">
+                                    <svg viewBox="64 64 896 896" focusable="false" class="" data-icon="file-text" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                                       <path d="M854.6 288.6L639.4 73.4c-6-6-14.1-9.4-22.6-9.4H192c-17.7 0-32 14.3-32 32v832c0 17.7 14.3 32 32 32h640c17.7 0 32-14.3 32-32V311.3c0-8.5-3.4-16.7-9.4-22.7zM790.2 326H602V137.8L790.2 326zm1.8 562H232V136h302v216a42 42 0 0 0 42 42h216v494zM504 618H320c-4.4 0-8 3.6-8 8v48c0 4.4 3.6 8 8 8h184c4.4 0 8-3.6 8-8v-48c0-4.4-3.6-8-8-8zM312 490v48c0 4.4 3.6 8 8 8h384c4.4 0 8-3.6 8-8v-48c0-4.4-3.6-8-8-8H320c-4.4 0-8 3.6-8 8z"></path>
+                                    </svg>
+                                 </i>
+                                 <p>Quizzes</p>
+                              </div>
+                              <div class="course-detail__include__right">
+                                 <p>1 Exams - 80 Questions</p>
+                              </div>
+                           </div>
+                           <div class="flex justify-between px-10">
+                              <div class="course-detail__include__left flex items-center">
+                                 <i aria-label="icon: eye" class="anticon anticon-eye mr-4">
+                                    <svg viewBox="64 64 896 896" focusable="false" class="" data-icon="eye" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                                       <path d="M942.2 486.2C847.4 286.5 704.1 186 512 186c-192.2 0-335.4 100.5-430.2 300.3a60.3 60.3 0 0 0 0 51.5C176.6 737.5 319.9 838 512 838c192.2 0 335.4-100.5 430.2-300.3 7.7-16.2 7.7-35 0-51.5zM512 766c-161.3 0-279.4-81.8-362.7-254C232.6 339.8 350.7 258 512 258c161.3 0 279.4 81.8 362.7 254C791.5 684.2 673.4 766 512 766zm-4-430c-97.2 0-176 78.8-176 176s78.8 176 176 176 176-78.8 176-176-78.8-176-176-176zm0 288c-61.9 0-112-50.1-112-112s50.1-112 112-112 112 50.1 112 112-50.1 112-112 112z"></path>
+                                    </svg>
+                                 </i>
+                                 <p>View</p>
+                              </div>
+                              <div class="course-detail__include__right">
+                                 <p>885</p>
+                              </div>
+                           </div>
+                           <div class="flex justify-between px-10">
+                              <div class="course-detail__include__left flex items-center">
+                                 <i aria-label="icon: thunderbolt" class="anticon anticon-thunderbolt mr-4">
+                                    <svg viewBox="64 64 896 896" focusable="false" class="" data-icon="thunderbolt" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                                       <path d="M848 359.3H627.7L825.8 109c4.1-5.3.4-13-6.3-13H436c-2.8 0-5.5 1.5-6.9 4L170 547.5c-3.1 5.3.7 12 6.9 12h174.4l-89.4 357.6c-1.9 7.8 7.5 13.3 13.3 7.7L853.5 373c5.2-4.9 1.7-13.7-5.5-13.7zM378.2 732.5l60.3-241H281.1l189.6-327.4h224.6L487 427.4h211L378.2 732.5z"></path>
+                                    </svg>
+                                 </i>
+                                 <p>Enrolled Students</p>
+                              </div>
+                              <div class="course-detail__include__right">
+                                 <p>136</p>
+                              </div>
+                           </div>
+                           <div class="flex justify-between px-10">
+                              <div class="course-detail__include__left flex items-center">
+                                 <i aria-label="icon: idcard" class="anticon anticon-idcard mr-4">
+                                    <svg viewBox="64 64 896 896" focusable="false" class="" data-icon="idcard" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                                       <path d="M928 160H96c-17.7 0-32 14.3-32 32v640c0 17.7 14.3 32 32 32h832c17.7 0 32-14.3 32-32V192c0-17.7-14.3-32-32-32zm-40 632H136V232h752v560zM610.3 476h123.4c1.3 0 2.3-3.6 2.3-8v-48c0-4.4-1-8-2.3-8H610.3c-1.3 0-2.3 3.6-2.3 8v48c0 4.4 1 8 2.3 8zm4.8 144h185.7c3.9 0 7.1-3.6 7.1-8v-48c0-4.4-3.2-8-7.1-8H615.1c-3.9 0-7.1 3.6-7.1 8v48c0 4.4 3.2 8 7.1 8zM224 673h43.9c4.2 0 7.6-3.3 7.9-7.5 3.8-50.5 46-90.5 97.2-90.5s93.4 40 97.2 90.5c.3 4.2 3.7 7.5 7.9 7.5H522a8 8 0 0 0 8-8.4c-2.8-53.3-32-99.7-74.6-126.1a111.8 111.8 0 0 0 29.1-75.5c0-61.9-49.9-112-111.4-112s-111.4 50.1-111.4 112c0 29.1 11 55.5 29.1 75.5a158.09 158.09 0 0 0-74.6 126.1c-.4 4.6 3.2 8.4 7.8 8.4zm149-262c28.5 0 51.7 23.3 51.7 52s-23.2 52-51.7 52-51.7-23.3-51.7-52 23.2-52 51.7-52z"></path>
+                                    </svg>
+                                 </i>
+                                 <p>Certificated Students</p>
+                              </div>
+                              <div class="course-detail__include__right">
+                                 <p>16</p>
+                              </div>
+                           </div>
+                           <div class="flex justify-between px-10">
+                              <div class="course-detail__include__left flex items-center">
+                                 <i aria-label="icon: container" class="anticon anticon-container mr-4">
+                                    <svg viewBox="64 64 896 896" focusable="false" class="" data-icon="container" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                                       <path d="M832 64H192c-17.7 0-32 14.3-32 32v832c0 17.7 14.3 32 32 32h640c17.7 0 32-14.3 32-32V96c0-17.7-14.3-32-32-32zm-40 824H232V687h97.9c11.6 32.8 32 62.3 59.1 84.7 34.5 28.5 78.2 44.3 123 44.3s88.5-15.7 123-44.3c27.1-22.4 47.5-51.9 59.1-84.7H792v-63H643.6l-5.2 24.7C626.4 708.5 573.2 752 512 752s-114.4-43.5-126.5-103.3l-5.2-24.7H232V136h560v752zM320 341h384c4.4 0 8-3.6 8-8v-48c0-4.4-3.6-8-8-8H320c-4.4 0-8 3.6-8 8v48c0 4.4 3.6 8 8 8zm0 160h384c4.4 0 8-3.6 8-8v-48c0-4.4-3.6-8-8-8H320c-4.4 0-8 3.6-8 8v48c0 4.4 3.6 8 8 8z"></path>
+                                    </svg>
+                                 </i>
+                                 <p>Total Tests</p>
+                              </div>
+                              <div class="course-detail__include__right">
+                                 <p>163</p>
+                              </div>
+                           </div>
+                           <div class="flex justify-between px-10 pb-4">
+                              <div class="course-detail__include__left flex items-center">
+                                 <i aria-label="icon: question" class="anticon anticon-question mr-4">
+                                    <svg viewBox="64 64 896 896" focusable="false" class="" data-icon="question" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                                       <path d="M764 280.9c-14-30.6-33.9-58.1-59.3-81.6C653.1 151.4 584.6 125 512 125s-141.1 26.4-192.7 74.2c-25.4 23.6-45.3 51-59.3 81.7-14.6 32-22 65.9-22 100.9v27c0 6.2 5 11.2 11.2 11.2h54c6.2 0 11.2-5 11.2-11.2v-27c0-99.5 88.6-180.4 197.6-180.4s197.6 80.9 197.6 180.4c0 40.8-14.5 79.2-42 111.2-27.2 31.7-65.6 54.4-108.1 64-24.3 5.5-46.2 19.2-61.7 38.8a110.85 110.85 0 0 0-23.9 68.6v31.4c0 6.2 5 11.2 11.2 11.2h54c6.2 0 11.2-5 11.2-11.2v-31.4c0-15.7 10.9-29.5 26-32.9 58.4-13.2 111.4-44.7 149.3-88.7 19.1-22.3 34-47.1 44.3-74 10.7-27.9 16.1-57.2 16.1-87 0-35-7.4-69-22-100.9zM512 787c-30.9 0-56 25.1-56 56s25.1 56 56 56 56-25.1 56-56-25.1-56-56-56z"></path>
+                                    </svg>
+                                 </i>
+                                 <p>Total Questions</p>
+                              </div>
+                              <div class="course-detail__include__right">
+                                 <p>155</p>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                 
+               </div>
             </div>
-        </div>
-        <div class="col-4">
-            <div class="course-detail">
-                <div class="p-2 course-detail__thumbnail">
-                    <img src="/assets/html-course.jpg">
-                </div>
-                <div class="course-detail__enroll py-2">
-                    <div class="text-center">
-                        <button type="button" class="btn btn-warning capitalize">Enroll</button>
-                    </div>
-                </div>
-                <div class="course-detail__info py-4 pl-4">
-                    <i class="text-warning fas fa-book mr-2"></i>
-                    <span>This course includes:</span>
-                </div>
-                <div class="course-detail__include py-4 pl-4 px-4">
-                    <div class="d-flex justify-content-between">
-                        <div class="course-detail__include__left">
-                            <i class="text-warning far fa-clock"></i>
-                            <span>Duration</span>
-                        </div>
-                        <div class="course-detail__include__right">
-                            <p>1 hour 30 minutes</p>
-                        </div>
-                    </div>
-                    <div class="d-flex justify-content-between">
-                        <div class="course-detail__include__left">
-                            <i class="text-warning far fa-file"></i>
-                            <span>Quizzes</span>
-                        </div>
-                        <div class="course-detail__include__right">
-                            <p>1 Exams - 80 Questions</p>
-                        </div>
-                    </div>
-                    <div class="d-flex justify-content-between">
-                        <div class="course-detail__include__left">
-                            <i class="text-warning far fa-eye"></i>
-                            <span>View</span>
-                        </div>
-                        <div class="course-detail__include__right">
-                            <p>756</p>
-                        </div>
-                    </div>
-                    <div class="d-flex justify-content-between">
-                        <div class="course-detail__include__left">
-                            <i class="text-warning fas fa-bolt"></i>
-                            <span>Enrolled Students</span>
-                        </div>
-                        <div class="course-detail__include__right">
-                            <p>115</p>
-                        </div>
-                    </div>
-                    <div class="d-flex justify-content-between">
-                        <div class="course-detail__include__left">
-                            <i class="text-warning far fa-file-alt"></i>
-                            <span>Total Tests</span>
-                        </div>
-                        <div class="course-detail__include__right">
-                            <p>134</p>
-                        </div>
-                    </div>
-                    <div class="d-flex justify-content-between">
-                        <div class="course-detail__include__left">
-                            <i class="text-warning fas fa-question"></i>
-                            <span>Total Questions</span>
-                        </div>
-                        <div class="course-detail__include__right">
-                            <p>155</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+         </section>
+      </div>
+   </div>
+</main>

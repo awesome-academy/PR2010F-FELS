@@ -1,66 +1,241 @@
 <% provide(:title, "Courses Page") %>
-<section class="detail-banner">
-	<div class="detail-banner__main detail-banner__breadcrumb">
-		<ol class="breadcrumb bg-transparent text-white">
-			<li class="breadcrumb-item"><a href="#">Home</a></li>
-			<li class="breadcrumb-item active" aria-current="page">Courses</li>
-		</ol>
-	</div>
-	<div class="course-main pt-2">
-		<div class="course-main__content pt-5">
-			<p class="course-main__content__name text-white">
-				All Courses
-			</p>
-		</div>
-	</div>
-</section>
-<section class="onetwo-layout">
-	<div class="cross-bar">
-		<div class="">
-			<ul class="nav">
-			  <li class="nav-item">
-			    <a class="nav-link active" href="#">All Courses</a>
-			  </li>
-			  <li class="nav-item">
-			    <a class="nav-link" href="#">My Courses</a>
-			  </li>
-			</ul>
-		</div>
-	</div>
-</section>
-<div class="mt-4 jumbotron">
-	<div class="row">
-		<div class="col">
-			<!-- Show courses here -->
+<main class="v-layout-content flex-shrink-0 ant-layout-content">
+    <section class="detail-banner relative small-banner" style="background:url(&quot;/assets/banner-course-detail.png&quot;);min-height:">
+        <div class="detail-banner__main detail-banner__breadcrumb">
+            <div class="py-3 ant-breadcrumb"><span><span class="ant-breadcrumb-link"><a href="/">Home</a></span><span class="ant-breadcrumb-separator">&gt;</span></span><span><span class="ant-breadcrumb-link"><a href="/courses">List Courses</a></span><span class="ant-breadcrumb-separator">&gt;</span></span></div>
+        </div>
+        <div class="course-main v-layout-center pt-5">
+            <div class="course-main__content mb-8">
+                <p class="course-main__content__name text-white">All Courses</p>
+            </div>
+        </div>
+    </section>
+    <section class="onetwo-layout certificates">
+        <div class="cross-bar ">
+            <div class="ant-row v-layout-center">
+                <div class="ant-col ant-col-8 vs:hidden xl:block pr-2"></div>
+                <div vs="24" class="ant-col flex items-center xl:pl-8 ant-col-xl-16">
+                    <ul class="menu-tab menu-tab-desktop">
+                        <li class="tab-active"><a href="/courses?type=all">All Courses</a></li>
+                    </ul>
+                    <div class="menu-tab-mobile">
+                        <ul class="ant-menu ant-menu-light ant-menu-root ant-menu-horizontal" role="menu">
+                            <li class="ant-menu-submenu ant-menu-submenu-horizontal ant-menu-overflowed-submenu" style="display:none" role="menuitem">
+                                <div class="ant-menu-submenu-title" aria-expanded="false" aria-haspopup="true"><span>···</span><i class="ant-menu-submenu-arrow"></i></div>
+                            </li>
+                            <li class="ant-menu-item ant-menu-item-selected" role="menuitem"><a href="/courses?type=all">All Courses</a></li>
+                            <li class="ant-menu-submenu ant-menu-submenu-horizontal ant-menu-overflowed-submenu" style="display:none" role="menuitem">
+                                <div class="ant-menu-submenu-title" aria-expanded="false" aria-haspopup="true"><span>···</span><i class="ant-menu-submenu-arrow"></i></div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cross-bar ">
+            <div class="ant-row v-layout-center">
+                <div class="ant-col ant-col-8 vs:hidden xl:block pr-2"></div>
+                <div vs="24" class="ant-col flex items-center xl:pl-8 ant-col-xl-16">
+                    <div class="flex justify-between w-full">
+                        <div class="certificates__page">
+                            <div class="results flex-1">
+                                Showing
+                                <!-- -->
+                                <span class="bold text-black">
+                                    1
+                                    <!-- -->-
+                                    <!-- --><%= @courses.count %>
+                                </span>
+                                <!-- -->of
+                                <!-- --> <span class="bold text-black"><%= @courses.count %></span> <!-- -->results
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-10 certificates__sortby">
+                        <div class="ant-row ant-form-item select-box flex ">
+                            <div class="ant-col ant-form-item-control-wrapper">
+                                <div class="ant-form-item-control">
+                                    <span class="ant-form-item-children">
+                                        <div id="filter_form_order" style="width:120px;margin-left:10px" class="ant-select ant-select-enabled">
+                                            <div class="ant-select-selection
+                                                ant-select-selection--single" role="combobox" aria-autocomplete="list" aria-haspopup="true" aria-controls="" aria-expanded="false" data-__meta="[object Object]" data-__field="[object Object]" tabindex="0">
+                                                <div class="ant-select-selection__rendered">
+                                                    <div style="display:none;user-select:none;-webkit-user-select:none" unselectable="on" class="ant-select-selection__placeholder">None</div>
+                                                    <div class="ant-select-selection-selected-value" title="Newest" style="display:block;opacity:1">Newest</div>
+                                                </div>
+                                                <span class="ant-select-arrow" style="user-select:none;-webkit-user-select:none" unselectable="on">
+                                                    <i aria-label="icon: down" class="anticon anticon-down ant-select-arrow-icon">
+                                                        <svg viewBox="64 64 896 896" focusable="false" class="" data-icon="down" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                                                            <path d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"></path>
+                                                        </svg>
+                                                    </i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="v-layout-center mb-8">
+            <div class="ant-row">
+                <div class="ant-col ant-col-8 left-col vs:hidden xl:block">
+                    <div class="certificates__tags p-6">
+                        <div class="search">
+                            <span class="ant-input-search ant-input-affix-wrapper">
+                                <input type="text" value="" icon="search" placeholder="Enter keyword..." class="ant-input" />
+                                <span class="ant-input-suffix">
+                                    <i aria-label="icon: search" tabindex="-1" class="anticon anticon-search ant-input-search-icon">
+                                        <svg viewBox="64 64 896 896" focusable="false" class="" data-icon="search" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                                            <path d="M909.6 854.5L649.9 594.8C690.2 542.7 712 479 712 412c0-80.2-31.3-155.4-87.9-212.1-56.6-56.7-132-87.9-212.1-87.9s-155.5 31.3-212.1 87.9C143.2 256.5 112 331.8 112 412c0 80.1 31.3 155.5 87.9 212.1C256.5 680.8 331.8 712 412 712c67 0 130.6-21.8 182.7-62l259.7 259.6a8.2 8.2 0 0 0 11.6 0l43.6-43.5a8.2 8.2 0 0 0 0-11.6zM570.4 570.4C528 612.7 471.8 636 412 636s-116-23.3-158.4-65.6C211.3 528 188 471.8 188 412s23.3-116.1 65.6-158.4C296 211.3 352.2 188 412 188s116.1 23.2 158.4 65.6S636 352.2 636 412s-23.3 116.1-65.6 158.4z"></path>
+                                        </svg>
+                                    </i>
+                                </span>
+                            </span>
+                        </div>
+                        <div class="tags pt-6"><span class="ant-tag m-1 ">Linux</span><span class="ant-tag m-1 ">LPIC</span><span class="ant-tag m-1 ">CCNP</span><span class="ant-tag m-1 ">CCNA</span><span class="ant-tag m-1 ">Ruby</span><span class="ant-tag m-1 ">ISTQB</span><span class="ant-tag m-1 ">AWS</span><span class="ant-tag m-1 ">FE</span><span class="ant-tag m-1 ">Laravel</span><span class="ant-tag m-1 ">Kubernetes</span></div>
+                    </div>
+                    <div class="certificates__categories p-6">
+                        <div class="title">
+                            <p>Categories</p>
+                        </div>
+                        <div class="list mt-6 pt-4">
+                            <div class="ant-row ant-form-item">
+                                <div class="ant-col ant-form-item-control-wrapper">
+                                    <div class="ant-form-item-control has-success">
+                                        <span class="ant-form-item-children">
+                                            <div class="ant-checkbox-group" id="filter_form_categories" data-__meta="[object Object]" data-__field="[object Object]"><label class="ant-checkbox-group-item ant-checkbox-wrapper"><span class="ant-checkbox"><input type="checkbox" class="ant-checkbox-input" value="Linux" /><span class="ant-checkbox-inner"></span></span><span>Linux</span></label><label class="ant-checkbox-group-item ant-checkbox-wrapper"><span class="ant-checkbox"><input type="checkbox" class="ant-checkbox-input" value="Google Cloud Platform (GCP)" /><span class="ant-checkbox-inner"></span></span><span>Google Cloud Platform (GCP)</span></label><label class="ant-checkbox-group-item ant-checkbox-wrapper"><span class="ant-checkbox"><input type="checkbox" class="ant-checkbox-input" value="Security" /><span class="ant-checkbox-inner"></span></span><span>Security</span></label><label class="ant-checkbox-group-item ant-checkbox-wrapper"><span class="ant-checkbox"><input type="checkbox" class="ant-checkbox-input" value="Web Development" /><span class="ant-checkbox-inner"></span></span><span>Web Development</span></label><label class="ant-checkbox-group-item ant-checkbox-wrapper"><span class="ant-checkbox"><input type="checkbox" class="ant-checkbox-input" value="Mobile App" /><span class="ant-checkbox-inner"></span></span><span>Mobile App</span></label><label class="ant-checkbox-group-item ant-checkbox-wrapper"><span class="ant-checkbox"><input type="checkbox" class="ant-checkbox-input" value="Machine Learning" /><span class="ant-checkbox-inner"></span></span><span>Machine Learning</span></label><label class="ant-checkbox-group-item ant-checkbox-wrapper"><span class="ant-checkbox"><input type="checkbox" class="ant-checkbox-input" value="Amazon Web Services (AWS)" /><span class="ant-checkbox-inner"></span></span><span>Amazon Web Services (AWS)</span></label><label class="ant-checkbox-group-item ant-checkbox-wrapper"><span class="ant-checkbox"><input type="checkbox" class="ant-checkbox-input" value="Blockchain" /><span class="ant-checkbox-inner"></span></span><span>Blockchain</span></label><label class="ant-checkbox-group-item ant-checkbox-wrapper"><span class="ant-checkbox"><input type="checkbox" class="ant-checkbox-input" value="Tools and Utilities" /><span class="ant-checkbox-inner"></span></span><span>Tools and Utilities</span></label><label class="ant-checkbox-group-item ant-checkbox-wrapper"><span class="ant-checkbox"><input type="checkbox" class="ant-checkbox-input" value="Database" /><span class="ant-checkbox-inner"></span></span><span>Database</span></label><label class="ant-checkbox-group-item ant-checkbox-wrapper"><span class="ant-checkbox"><input type="checkbox" class="ant-checkbox-input" value="DevOps" /><span class="ant-checkbox-inner"></span></span><span>DevOps</span></label><label class="ant-checkbox-group-item ant-checkbox-wrapper"><span class="ant-checkbox"><input type="checkbox" class="ant-checkbox-input" value="Programming Languanges" /><span class="ant-checkbox-inner"></span></span><span>Programming Languanges</span></label><label class="ant-checkbox-group-item ant-checkbox-wrapper"><span class="ant-checkbox"><input type="checkbox" class="ant-checkbox-input" value="Project Management" /><span class="ant-checkbox-inner"></span></span><span>Project Management</span></label></div>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="certificates__categories p-6">
+                        <div class="title">
+                            <p>Level</p>
+                        </div>
+                        <div class="list mt-6 pt-4">
+                            <div class="ant-row ant-form-item">
+                                <div class="ant-col ant-form-item-control-wrapper">
+                                    <div class="ant-form-item-control has-success">
+                                        <span class="ant-form-item-children">
+                                            <div class="ant-checkbox-group" id="filter_form_level" data-__meta="[object Object]" data-__field="[object Object]"><label class="ant-checkbox-group-item ant-checkbox-wrapper"><span class="ant-checkbox"><input type="checkbox" class="ant-checkbox-input" value="beginning" /><span class="ant-checkbox-inner"></span></span><span>Beginning</span></label><label class="ant-checkbox-group-item ant-checkbox-wrapper"><span class="ant-checkbox"><input type="checkbox" class="ant-checkbox-input" value="intermediate" /><span class="ant-checkbox-inner"></span></span><span>Intermediate</span></label><label class="ant-checkbox-group-item ant-checkbox-wrapper"><span class="ant-checkbox"><input type="checkbox" class="ant-checkbox-input" value="advanced" /><span class="ant-checkbox-inner"></span></span><span>Advanced</span></label></div>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="certificates__categories p-6">
+                        <div class="title">
+                            <p>Others</p>
+                        </div>
+                        <div class="list mt-6 pt-4">
+                            <div class="ant-row ant-form-item">
+                                <div class="ant-col ant-form-item-control-wrapper">
+                                    <div class="ant-form-item-control has-success">
+                                        <span class="ant-form-item-children">
+                                            <div class="ant-checkbox-group" id="filter_form_other" data-__meta="[object Object]" data-__field="[object Object]"><label class="ant-checkbox-group-item ant-checkbox-wrapper"><span class="ant-checkbox"><input type="checkbox" class="ant-checkbox-input" value="newest" /><span class="ant-checkbox-inner"></span></span><span>Newest</span></label><label class="ant-checkbox-group-item ant-checkbox-wrapper"><span class="ant-checkbox"><input type="checkbox" class="ant-checkbox-input" value="most-popular" /><span class="ant-checkbox-inner"></span></span><span>Most popular</span></label></div>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div vs="24" class="ant-col right-content vs:pl-0 xl:pl-8 ant-col-xl-16">
+                    <div class="vs:pr-0 xl:pr-0">
+						<% if @courses.any? %>
+						<% @courses.each do |course| %>
+                        <div class="certificates__item lg:flex vs:block mt-10">
+                            <img class="course-image cursor-pointer" src="https://learn.viblo.asia/uploads/0/7/07ad167c-6e9e-4a9d-97e7-4bc294b59be1.png" alt="" />
+                            <div class="body pl-6 pb-4 xlExtra:pr-8">
+                                <div class="absolute right-0 bottom-0"></div>
+                                <div class="title">
+                                    <div class="flex justify-between">
+                                        <p class="cursor-pointer pt-4 pr-4"><%= link_to course.course_name, course_path(course) %></p>
+                                    </div>
+                                </div>
+                                <div class="info mt-5 mr-5">
+                                    <div class="ant-row flex items-center">
+                                        <div class="ant-col ant-col-xs-6 ant-col-sm-6 ant-col-lg-3">
+                                            <div class="updated mx-4">
+                                                <div class="flex"><img src="/assets/users.svg" alt="" class="mr-2" />4</div>
+                                            </div>
+                                        </div>
+                                        <div class="ant-col ant-col-xs-12 ant-col-sm-12 ant-col-lg-8">
+                                            <div class="updated mx-4 justify-center">
+                                                <div class="flex">
+                                                    <i aria-label="icon: calendar" class="anticon anticon-calendar">
+                                                        <svg viewBox="64 64 896 896" focusable="false" class="" data-icon="calendar" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                                                            <path d="M880 184H712v-64c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v64H384v-64c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v64H144c-17.7 0-32 14.3-32 32v664c0 17.7 14.3 32 32 32h736c17.7 0 32-14.3 32-32V216c0-17.7-14.3-32-32-32zm-40 656H184V460h656v380zM184 392V256h128v48c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8v-48h256v48c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8v-48h128v136H184z"></path>
+                                                        </svg>
+                                                    </i>
+                                                    <%= course.created_at.to_date %>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="ant-col ant-col-xs-6 ant-col-sm-6 ant-col-lg-3">
+                                            <div class="updated mx-4">
+                                                <div class="flex">
+                                                    <i aria-label="icon: eye" class="anticon anticon-eye">
+                                                        <svg viewBox="64 64 896 896" focusable="false" class="" data-icon="eye" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                                                            <path d="M942.2 486.2C847.4 286.5 704.1 186 512 186c-192.2 0-335.4 100.5-430.2 300.3a60.3 60.3 0 0 0 0 51.5C176.6 737.5 319.9 838 512 838c192.2 0 335.4-100.5 430.2-300.3 7.7-16.2 7.7-35 0-51.5zM512 766c-161.3 0-279.4-81.8-362.7-254C232.6 339.8 350.7 258 512 258c161.3 0 279.4 81.8 362.7 254C791.5 684.2 673.4 766 512 766zm-4-430c-97.2 0-176 78.8-176 176s78.8 176 176 176 176-78.8 176-176-78.8-176-176-176zm0 288c-61.9 0-112-50.1-112-112s50.1-112 112-112 112 50.1 112 112-50.1 112-112 112z"></path>
+                                                        </svg>
+                                                    </i>
+                                                    44
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-			<% if @courses.any? %>
-			<% @courses.each do |course| %>
-			<div class="container">
-				<div class="certificates__item mt-3 row rounded">
-					<img class="col-4 p-0 rounded" src="/assets/default.png">
-					<div class="body col-8 pt-2">
-						<div class="title">
-							<p class="cursor-pointer pt-2">
-								<%= link_to course.course_name, course %>
-								<a href="#"><%= course.course_name%></a>
-							</p>
-						</div>
-						<div class="info mt-5">
-							<div class="d-flex bd-highlight">
-							  <div class="p-2 flex-fill bd-highlight">
-							  	<a href="#" class="badge badge-primary">Beginning Level</a>
-							  </div>
-							  <div class="p-2 flex-fill bd-highlight">Students: 2</div>
-							  <div class="p-2 flex-fill bd-highlight">Created at: 19/03/2021</div>
-							  <div class="p-2 flex-fill bd-highlight">Views: 2</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<% end %>
-			<% end %>
-			<!-- END -->
-		</div>
-	</div>
+						<% end %>
+						<% end %>
+
+                        <div class="flex justify-center my-8">
+                            <div class="paginate">
+                                <ul class="pagination">
+                                    <li class="disabled"><a class="" href="#">«</a></li>
+                                    <li class="disabled"><a class="" href="#">⟨</a></li>
+                                    <li class="active"><a class="undefined" href="#">1</a></li>
+                                    <li class=""><a class="" href="#">2</a></li>
+                                    <li class=""><a class="" href="#">3</a></li>
+                                    <li class=""><a class="" href="#">4</a></li>
+                                    <li class=""><a class="" href="#">5</a></li>
+                                    <li class=""><a class="" href="#">⟩</a></li>
+                                    <li class=""><a class="" href="#">»</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="certificates">
+        <div class="only-mobile btn-filter justify-center vs:block xl:hidden">
+            <span role="img" aria-label="filter" class="anticon anticon-filter">
+                <svg viewBox="64 64 896 896" focusable="false" class="" data-icon="filter" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                    <path d="M880.1 154H143.9c-24.5 0-39.8 26.7-27.5 48L349 597.4V838c0 17.7 14.2 32 31.8 32h262.4c17.6 0 31.8-14.3 31.8-32V597.4L907.7 202c12.2-21.3-3.1-48-27.6-48zM603.4 798H420.6V642h182.9v156zm9.6-236.6l-9.5 16.6h-183l-9.5-16.6L212.7 226h598.6L613 561.4z"></path>
+                </svg>
+            </span>
+        </div>
+    </div>
+</main>
+<div class="flex-shrink-0">
+    <div class="v-layout-learning-path flex flex-col items-center justify-center">
+        <img class="v-logo" src="/assets/logo.svg" alt="Viblo Learning Logo" />
+        <div class="text">Don’t know where to start?</div>
+        <div class="description">You can see the roadmap as our reference for your career path below</div>
+        <a href="/roadmaps"><button type="button" class="capitalize v-button v-button-primary v-button-large  " style="width:auto">Get a learning path here</button></a>
+        <div class="v-layout-learning-path__top-left flex"><img src="/assets/polygon-learning-path-orange.svg" alt="" /><img class="polygon-small-red" src="/assets/polygon-learning-path-red.svg" alt="" /></div>
+        <div class="v-layout-learning-path__bottom-right"></div>
+    </div>
 </div>
