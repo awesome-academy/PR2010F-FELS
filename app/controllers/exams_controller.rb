@@ -25,7 +25,15 @@ class ExamsController < ApplicationController
   end
 
   def show
+    # Solution result
     @questions = @course.questions
+    @question_number = @questions.count
+    @number_correct = Exam.last.answers.where(is_correct: true).count
+    if @number_correct >= (@question_number*0.8)
+      @pass_or_fail = "PASSED: #{@number_correct}/#{@question_number}"
+    else
+      @pass_or_fail = "FAIL: #{@number_correct}/#{@question_number}"
+    end
   end
 
   private
