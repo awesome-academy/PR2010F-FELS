@@ -1,7 +1,7 @@
 class ExamsController < ApplicationController
   before_action :find_course, only: [:new, :show]
   before_action :find_exam, only: [:show]
-  before_action :logged_in_user, only: [:create]
+  before_action :logged_in_user, only: [:create, :index, :new, :show]
   def new
     @exam = Exam.new 
     for i in 1..@course.questions.count
@@ -10,6 +10,10 @@ class ExamsController < ApplicationController
 
     @questions = @course.questions
 
+  end
+
+  def index
+    @pagy, @exams = pagy(current_user.exams, items: 10)
   end
 
   def create
